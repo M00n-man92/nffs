@@ -1,0 +1,58 @@
+.intro{
+  height: 120px;
+  width: 100%;
+  .components{
+    height: 100%;
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    .first{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .title{
+        margin-left: 1%;
+        font-size: 32px;
+        color: #004274;
+        font-family: "Bellota-Bold";
+      }
+    }
+    .second{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .single{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        // margin-right: 10%;
+        // background-color: red;
+
+        .items{
+          margin-left: 10%;
+          display: flex;
+          // align-items: center;
+          // justify-content: flex-end;
+          flex-direction: column;
+          span{
+
+            margin-bottom: 4%;
+            font-size: 16px;
+            color: #004274;
+            font-family: "Bellota-Bold";
+
+          }
+          span:nth-child(2){
+            font-family: "Bellota-Light";
+          }
+        }
+      }
+    }
+    // background-color: red;
+
+  }
+
+}

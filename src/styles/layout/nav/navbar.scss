@@ -1,0 +1,79 @@
+.nav {
+  height: 50px;
+  width: 100%;
+  overflow: visible;
+  background-color: #004274;
+  
+  .navitems {
+    height: 100%;
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    // width: 83%;
+    .navigators {
+      flex: 0.8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: inherit;
+      // width: 10%;
+      // background-color: red;
+
+      .verticallines {
+        height: 100%;
+        border-left: 1px solid #00578f;
+      }
+      .containers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+
+        span {
+          font-size: 12px;
+          font-family: "Bellota-Bold";
+          color: white;
+        }
+      }
+      .containers:hover {
+        background-color: #00578f;
+        span {
+          color: #00aeff;
+        }
+      }
+    }
+    .usercred {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .accountcircle{
+        color: white;
+        font-size: 30px; 
+        cursor: "pointer"; 
+      }
+      .accountcircle:hover{
+        color: #00aeff;
+      }
+      .create {
+        button {
+          cursor: pointer;
+          height: 40px;
+          width: 150px;
+          border: none;
+          border-radius: 2px;
+          color: white;
+          background-color: #00aeff;
+          margin-left: 10%;
+          font-family: "Bellota-Bold";
+          font-weight: 1000;
+          button:hover {
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+}

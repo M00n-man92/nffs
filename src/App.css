@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Bellota-Bold";
+  src: local("Bellota-Bold"),
+  url("./assets/fonts/Bellota/BellotaText-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Bellota-Light";
+  src: local("Bellota-Light"),
+  url("./assets/fonts/Bellota/BellotaText-Light.ttf");
+}
+@font-face {
+  font-family: "Bellota-Regular";
+  src: local("Bellota-Regular"),
+  url("./assets/fonts/Bellota/BellotaText-Regular.ttf");
+}
+@font-face {
+  font-family: "MuseoModerno-Bold";
+  src: local("MuseoModerno-Bold"),
+  url("./assets/fonts/Museo/MuseoModerno-Bold.ttf");
+}
+@font-face {
+  font-family: "MuseoModerno-Light";
+  src: local("MuseoModerno-Light"),
+  url("./assets/fonts/Museo/MuseoModerno-Light.ttf");
+}
+@font-face {
+  font-family: "MuseoModerno-Regular";
+  src: local("MuseoModerno-Regular"),
+  url("./assets/fonts/Museo/MuseoModerno-Regular.ttf");
+}
+@font-face {
+  font-family: "Risque-Regular";
+  src: local("Risque-Regular"),
+  url("./assets/fonts/Risque-Regular.ttf");
+}

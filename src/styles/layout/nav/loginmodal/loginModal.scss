@@ -1,0 +1,124 @@
+.renderlogin{
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+  background-color: red;
+  .loginheader{
+    display: flex;
+    align-items: center;
+    background-color: #00AEFF;
+    height: 12%;
+    .loginsigintext{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      // margin-left: 3%;
+      width: 40%;
+      height: 100%;
+      // cursor: pointer;
+      span{
+        font-size: 16px;
+        color: black;
+      }
+    }
+    .loginsignuptext{
+      cursor: pointer;
+      // margin-left: 3%;
+      background-color: #00AEFF;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // border-left: 1px solid rgb(193, 232, 255);
+      border-right: 1px solid #33BEFF;
+      span{
+        font-size: 16px;
+        color: white;
+      }
+    }
+    .verticallines{
+      height: 100%;
+          border-left: 1px solid #33BEFF;
+    }
+    button{
+      width: 20%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      margin-left: 30%;
+      border: none;
+      background-color: #00AEFF;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border-left: 1px solid #33BEFF;
+    }
+  }
+  .loginmiddle{
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+    .logintextfield{
+      // height: 20%;
+      width: 90%;
+    }
+    .logintextfield:nth-child(2){
+      width:90%;
+      margin-top: 3%;
+    }
+    .loginrememberme{
+      margin-top: 4%;
+      width: 90%;
+      display: flex;
+      // background-color: red;
+      align-items: center;
+      justify-content: space-between;
+      
+      a{
+        text-decoration: none;
+        color: #00AEFF;
+      }
+    }
+  }
+  .loginlast{
+    height: 32%;
+    margin-top: 4%;
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+    .loginsigininbutton{
+      height: 40%;
+      width: 90%;
+      background-color: #00AEFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .logingoogle{
+      height: 40%;
+      width: 90%;
+      margin-top: 2%;
+      display: flex;
+      align-items: center;
+      .googlebutton{
+        height: 100%;
+        width: 80%;
+        background-color: #00AEFF;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border: none;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}
