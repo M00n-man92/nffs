@@ -14,15 +14,15 @@ import InputLabel from '@mui/material/InputLabel';
 export const registerModal = (setOpenModal, openModal, setChangeRegister, setAccount, account) => {
   
   return (
-    <div className='renderlogin'
+    <div className='renderregister'
       style={{
         display: "flex",
         flexDirection: "column",
         position: "absolute",
         left: "50%",
-        top: "62%",
-        height: "750px",
-        width: "430px",
+        top: "55%",
+        height: "100%",
+        width: "33.4%",
         transform: "translate(-50%, -50%)",
         opacity: "1",
         backgroundColor: "white",
@@ -166,7 +166,7 @@ export const registerModal = (setOpenModal, openModal, setChangeRegister, setAcc
       </div>
       <div className='registerlast'>
         <button className="registersigininbutton">
-          LOGIN
+          Register
         </button>
         <div className="registergoogle">
           <Google style={{ width: "20%", fontSize: "20px", border: " 1px solid #3c8daa", height: "100%" }} />

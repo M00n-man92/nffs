@@ -18,7 +18,8 @@ export default function NavBar() {
         style={{ 
           opacity: "1",
           border:"none",
-          borderRadius:"4px"
+          borderRadius:"4px",
+          overflow:"auto"
         }}
         open={!openModal}
         onClose={(e) => { setOpenModal(!openModal) }}

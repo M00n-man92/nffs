@@ -1,4 +1,4 @@
-.renderlogin{
+.renderregister{
   display: flex;
   flex-direction: column;
   width: inherit;
@@ -58,6 +58,8 @@
     }
   }
   .registermiddle{
+    // background-color: red;
+
     margin-top: 8%;
     display: flex;
     flex-direction: column;
@@ -82,13 +84,14 @@
     }
   }
   .registerlast{
-    height: 32%;
+    height: 15%;
     margin-top: 4%;
     margin-left: 8%;
     display: flex;
+    // background-color: red;
     flex-direction: column;
     .registersigininbutton{
-      height: 20%;
+      height: 40%;
       width: 90%;
       background-color: #00AEFF;
       color: white;
@@ -97,7 +100,7 @@
       border-radius: 4px;
     }
     .registergoogle{
-      height: 20%;
+      height: 40%;
       width: 90%;
       margin-top: 2%;
       display: flex;
