@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 // css class
 import "../../../../styles/display/products/Items/item.scss"
 // material ui
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined } from '@mui/icons-material'
 import { Modal, Box, Button, Typography } from '@mui/material'
-export default function Item() {
-  
+export default function Item({open, setOpen}) {
+
   return (
     <div className='item'>
       {/* {renderModal()} */}
@@ -29,14 +29,14 @@ export default function Item() {
             <div className="individual">
               <div className='shadow'>
                 <span>Favorite</span>
-                
+
               </div>
               <FavoriteBorder className="like" />
             </div>
-            <div className="individual">
+            <div className="individual" onClick={(e)=>{setOpen(!open)}}>
               <div className='shadow'>
-              <span>Preview</span>
-                
+                <span>Preview</span>
+
               </div>
               <UnfoldMore className="like" />
             </div>

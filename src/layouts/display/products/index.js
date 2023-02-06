@@ -3,34 +3,41 @@ import React, { useRef, useState, useEffect } from 'react'
 //css class 
 import "../../../styles/display/products/products.scss"
 import Item from './items'
-import { Modal, Box, Typography } from '@mui/material';
+import { Modal } from '@mui/material';
+import ItemModal from './itemModal';
 
 export default function Products() {
   
-  const [open, setOpen] = React.useState(true);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState(true);
   // int that changes to move the box to the right or left
   const [slider,setSlider]=useState(0)
   // percent that changes every time the box moves by 0.1
   const [percent, setPercent] = useState(6);
   // count to hold an initial value that decreases every time the box moves to the right
   const [count, setCount] = useState(0);
-  const [sizeing, setSizing] = useState(25.4);
+  // cirlce at the bottom of the page tracker
+  const circleId = [0,1,2,3,4];
+
   const autoPlay = useRef()
-  const width = window.innerWidth;
-  const height = window.innerHeight;  
+   
   /// movies the box one step to the left
   const handleMoveLeft = () => {
-    if(slider>0){
-      setSlider(slider-1);
-      setPercent(percent+(0.6+count));
-      setCount(0.5-(slider/10));
-    }
-    else{
+    if(slider===0){
       setSlider(0);
       setPercent(6);
+      setCount(0)
     }
+    else if(slider>=1){
+      setSlider(slider-1);
+      if(slider===0){
+        setSlider(0);
+      setPercent(6);
+      setCount(0)
+      }
+      // setPercent(percent+(0.6+count));
+      // setCount(0.5-(slider/10));
+    }
+    
     
   }
   // moves the box one item to the right
@@ -46,27 +53,43 @@ export default function Products() {
       // setPercent(6);
     }
   }
+  // moving the box to specific slider
+  const handleMove = (slide) =>{      
+      setSlider(slide);
+      setPercent(percent+(0.6-count));
+      setCount(0.5+(slider/10));
+      // setPercent(6);
+    
+  }
+
+  // slides the products one step to the right with every 5 secs 
   useEffect(() => {
         autoPlay.current = heandler
     })
-    // setInterval(()=>heandler("r"),8000)
-    // useEffect(() => {
-    //     const andle = () => {
-    //         autoPlay.current()
-    //     }
-    //     // andle()
-    //     setInterval(andle, 4000)
+    // setInterval(()=>heandler(),8000)
+    useEffect(() => {
+        const andle = () => {
+            autoPlay.current()
+        }
+        // andle()
+        setInterval(andle, 8000)
 
-    // }, [])
+    }, [])
     
   const heandler = () => {
+    if(slider!==4){ 
+      setSlider(slider+1);
+      setPercent(percent+(0.6-count));
+      setCount(0.5+(slider/10));
+    }
+     
     
-    slider !== 4 ? setSlider(slider + 1) : setSlider(0)
+    // slider !== 4 ? setSlider(slider + 1) : setSlider(4)
   }
   const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
+    position: 'relative',
+    // top: '50%',
+    // left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
@@ -77,20 +100,12 @@ export default function Products() {
   const renderModal = () => {
     return (
       <Modal
-        sx={style}
         open={open}
-        onClose={handleClose}
+        onClose={()=>{setOpen(!open)}}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box >
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
+        <ItemModal />
       </Modal>
     )
   }
@@ -109,22 +124,22 @@ export default function Products() {
       <div className="slider">
 
         <div className="slidercomponenet" style={{ transform: `translateX(${-percent * slider}%)` }}>
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
+          <Item open={open} setOpen={setOpen}/>
         </div>
       </div>
       <div className='circles'>
-        {percent}  {count}  {slider}
-        <div className='individual'></div>
-        <div className='individual'></div>
-        <div className='individual'></div>
-        <div className='individual'></div>
+        <div id={circleId[0]} className={slider===circleId[0]?"individualcircle own":"individualcircle"} onClick={(e)=>{handleMove(0)}}></div>
+        <div id={circleId[1]} className={slider===circleId[1]?"individualcircle own":"individualcircle"} onClick={(e)=>{handleMove(1)}}></div>
+        <div id={circleId[2]} className={slider===circleId[2]?"individualcircle own":"individualcircle"} onClick={(e)=>{handleMove(2)}}></div>
+        <div id={circleId[3]} className={slider===circleId[3]?"individualcircle own":"individualcircle"} onClick={(e)=>{handleMove(3)}}></div>
+        <div id={circleId[4]} className={slider===circleId[4]?"individualcircle own":"individualcircle"} onClick={(e)=>{handleMove(4)}}></div>
       </div>
     </div>
   )
