@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import "../../../../styles/display/products/Items/item.scss"
 // material ui
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined } from '@mui/icons-material'
-import { Modal, Box, Button, Typography } from '@mui/material'
 export default function Item({open, setOpen}) {
 
   return (
