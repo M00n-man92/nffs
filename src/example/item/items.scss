@@ -1,0 +1,328 @@
+.item {
+  margin-top: 20px;
+  height: 95%;
+  margin-left: 0.5%;
+  width: 6.5%;
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  border: none;
+  border-radius: 4px;
+  .top:hover {
+    .secondinsideimg {
+      // background-color: rgba(13, 15, 10, 0.404);
+      background-color: transparent;
+      background: none;
+    }
+  }
+  .top {
+    height: 50%;
+    width: 100%;
+    // background: rgba(0, 0, 0, .65) url("https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg");
+    // background-color: ref;
+    // flex: 1;
+    // background-color: red;
+    // background-image: url("https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg");
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: space-between;
+    img {
+      // display: none;
+      border-radius: 4px;
+      // background-blend-mode: darken;
+
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      // background: linear-gradient(
+      //     rgba(0, 0, 0, 0.7),
+      //     rgba(0, 0, 0, 0.7)
+      //   ),
+      // filter: brightness(50%);
+    }
+    .firstinsideimg {
+      position: relative;
+
+      top: -100%;
+      left: 0.3%;
+
+      // margin-top: -60.1%;
+      // background-color: blue;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      .first {
+        // flex: 1;
+        margin-left: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1%;
+        width: 25%;
+        border: none;
+        border-radius: 2px;
+        background-color: #77c720;
+        //
+        span {
+          color: white;
+          font-size: 12px;
+          font-family: "Bellota-Regular";
+        }
+      }
+      .second {
+        // flex: 2;
+        margin-right: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1%;
+        width: 50%;
+        border: none;
+        border-radius: 2px;
+        span {
+          border-radius: 2px;
+          text-align: center;
+          width: 70%;
+          background-color: #585757;
+          margin-right: 2%;
+          font-size: 12px;
+          font-family: "Bellota-Regular";
+          color: white;
+        }
+      }
+    }
+    .secondinsideimg {
+      // background-blend-mode: darken;
+
+      position: relative;
+      top: -40%;
+      // left: 1%;
+      display: flex;
+      width: 100%;
+      // margin-top: 29%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // filter: brightness(100%);
+      height: 32%;
+      background-color: rgba(13, 15, 10, 0.404);
+      // background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+      // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(70%,rgba(255,255,255,1)));
+      // background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+      // background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+      // background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+      background: linear-gradient(to top, rgba(13, 15, 10, 0.404) 70%, transparent 95%);
+      // background-color: red;
+      .first {
+        margin-left: 2%;
+        display: flex;
+        // align-items: center;
+        flex-direction: column;
+        .price {
+          font-size: 22px;
+          font-family: "Bellota-Regular";
+          color: white;
+        }
+        .area {
+          font-size: 16px;
+          font-family: "Bellota-Regular";
+          color: white;
+        }
+        // height: 100px;
+        // background-color: red;
+      }
+      .icons {
+        height: inherit;
+        // background-color: red;
+        width: 30%;
+        margin-right: 3%;
+        display: flex;
+        margin-bottom: 10%;
+        // flex-direction: column;
+        .individual:hover {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          .shadow {
+            display: flex;
+          }
+        }
+        .individual {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          width: 100%;
+          height: 200%;
+          margin-right: 5%;
+
+          .shadow {
+            display: none;
+            margin-bottom: 3%;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(13, 15, 10, 0.404);
+
+            span {
+              color: white;
+              font-size: 12px;
+              font-family: "Bellota-light";
+            }
+          }
+          .like {
+            width: 100%;
+            background-color: rgba(13, 15, 10, 0.404);
+            cursor: pointer;
+            color: white;
+          }
+          
+        }
+      }
+    }
+  }
+  .bottomhalf {
+    width: 100%;
+    height: 50%;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .bottomfirst {
+      margin-top: 4%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // margin-left: 5%;
+
+      h3 {
+        font-size: 16px;
+        font-family: "Bellota-Bold";
+        margin-bottom: -0.1%;
+      }
+
+      span {
+        font-size: 13px;
+        font-family: "Bellota-Light";
+      }
+    }
+    .appliances {
+      margin-left: 3%;
+      // margin-top: 4%;
+      display: flex;
+
+      .bed {
+        display: flex;
+        // flex-direction: column;
+        // border-right: 1px solid #dce0e0;
+        padding-right: 3%;
+        .Icons {
+          display: flex;
+          align-items: center;
+          h3 {
+            font-size: 14px;
+            font-family: "Bellota-Light";
+          }
+        }
+      }
+      .bath {
+        display: flex;
+        // flex-direction: column;
+        // border-right: 1px solid #dce0e0;
+        // padding-right: 3%;
+        // margin-right: 4%;
+        margin-left: 2%;
+        padding-right: 3%;
+        .Icons {
+          display: flex;
+          align-items: center;
+          h3 {
+            font-size: 14px;
+            font-family: "Bellota-Light";
+          }
+        }
+      }
+      .square {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2%;
+        padding-right: 3%;
+        // border-right: 1px solid #dce0e0;
+        // padding-right: 3%;
+        .Icons {
+          display: flex;
+          align-items: center;
+          h3 {
+            font-size: 14px;
+            font-family: "Bellota-Light";
+          }
+        }
+        span {
+          font-size: 12px;
+          font-family: "Bellota-Light";
+        }
+      }
+      
+    }
+    .type{
+      display: flex;
+      align-items: center;
+      margin-left: 3%;
+      span{
+        font-size: 14px;
+        
+        font-family: "Bellota-Bold";
+        
+      }
+    }
+    .bottomlast {
+      width: 90%;
+      margin-top: 10%;
+      // background-color: red;
+      // width: 100%;
+      border-top: 1px solid #dce0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .user {
+        margin-top: 2%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 12px;
+          font-family: "Bellota-light";
+        }
+      }
+      .timeago {
+        margin-top: 2%;
+        width: 50%;
+        margin-left: 40%;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 12px;
+          font-family: "Bellota-light";
+        }
+      }
+      
+    }
+    .detail{
+      position: relative;
+      top: -30%;
+      left: 60%;
+      button{
+        cursor: pointer;
+        width: 120px;
+        height: 30px;
+        background-color: #00aeff;
+        color: white;
+        border: none;
+        border-radius: 2px;
+      }
+    }
+    // background-color: blue;
+  }
+}

@@ -3,10 +3,10 @@ import React from 'react'
 import "../../../../styles/display/productList/item/item.scss";
 // mui icons
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined } from '@mui/icons-material'
-import Items from "../../products/items/index.js";
+import Items from "../../../../example/item/index.js";
 export default function Item({ layoutWrap, originalLayout }) {
   return ( originalLayout && !layoutWrap ? <>
-  <div className={originalLayout && !layoutWrap ? 'item' : 'item true'}>
+  <div className='item'>
       <div className="image">
         <img src='https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg' alt='' />
         <div className="firstinsideimg">
@@ -17,11 +17,8 @@ export default function Item({ layoutWrap, originalLayout }) {
         </div>
         
         <div className="secondinsideimg">
-          <div className={!originalLayout && layoutWrap ?"icons wrap":"icons"}>
-            {!originalLayout && layoutWrap ? <div className="header">
-              <span >For Rent</span>
-              <span >Hot Offer</span>
-            </div> : <></>}
+          <div className="icons">
+            
             <div className="individual">
               <div className='shadow'>
                 <span>Favorite</span>
@@ -42,10 +39,10 @@ export default function Item({ layoutWrap, originalLayout }) {
       </div>
       <div className='detailsection'>
         <div className='detailedarea'>
-          {!originalLayout && layoutWrap ? <></> : <><div className="header">
+          <div className="header">
             <span >For Rent</span>
             <span >Hot Offer</span>
-          </div></>}
+          </div>
 
           <div className='titlesection'>
 

@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 // css class
-import "../../../../styles/display/products/Items/item.scss"
+import "./items.scss"
 // material ui
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined } from '@mui/icons-material'
-export default function Item({open, setOpen, style}) {
-/* style={style?style:{
-      height:"95%",
-      width:"6.5%",
-      display:"flex",
-      flexDirection:"column"}} */
+export default function Item({style}) {
+/* */
   return (
-    <div className='item' >
+    <div className='item' style={style?style:{
+      height:"30%",
+      width:"33%",
+      display:"flex",
+      flexDirection:"column"}} >
       {/* {renderModal()} */}
       <div className='top' >
         <img src='https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg' alt='' style={{width:"100%",height:"100%"}}/>
@@ -36,7 +36,7 @@ export default function Item({open, setOpen, style}) {
               </div>
               <FavoriteBorder className="like" />
             </div>
-            <div className="individual" onClick={(e)=>{setOpen(!open)}}>
+            <div className="individual" >
               <div className='shadow'>
                 <span>Preview</span>
 
@@ -52,44 +52,52 @@ export default function Item({open, setOpen, style}) {
           <h3> Commercial work shop</h3>
           <span>905 Brickell Bay Dr, Miami, FL 33131, USA</span>
         </div>
-        <div className="bottomsecond">
-          <div className="bed">
-            <div className="Icons">
-              <h3>4</h3>
-              <SingleBed style={{ color: "#2F2F2F" }} />
+        <div className="appliances">
+        <div className="bed">
+              <div className="Icons">
+                <SingleBed style={{ color: "#2F2F2F", fontSize: "16px" }} />
+                <h3>4</h3>
+              </div>
+              {/* if bedroom is one span should be singular */}
+
             </div>
-            {/* if bedroom is one span should be singular */}
-            <span>Bedrooms</span>
-          </div>
-          <div className="bath">
-            <div className="Icons">
-              <h3>4</h3>
-              <Shower style={{ color: "#2F2F2F" }} />
+            <div className="bath">
+              <div className="Icons">
+                <Shower style={{ color: "#2F2F2F", fontSize: "16px" }} />
+                <h3>4</h3>
+              </div>
+              {/* if bedroom is one span should be singular */}
+
+
             </div>
-            {/* if bedroom is one span should be singular */}
-            <span>Bathrooms</span>
-          </div>
-          <div className="square">
-            <div className="Icons">
-              <h3>1200</h3>
-              <SquareFoot style={{ color: "#2F2F2F" }} />
+            <div className="square">
+              <div className="Icons">
+
+                <SquareFoot style={{ color: "#2F2F2F", fontSize: "16px" }} />
+                <h3>1200</h3>
+              </div>
+              {/* if bedroom is one span should be singular */}
+
             </div>
-            {/* if bedroom is one span should be singular */}
-            <span>Sq per M</span>
-          </div>
+            
         </div>
+        <div className='type'>
+              <span>Apartment</span>
+            </div>
         <div className="bottomlast">
           <div className="user">
-            <AccountCircleOutlined style={{ color: "#2F2F2F" }} />
+            <AccountCircleOutlined style={{ color: "#2F2F2F", fontSize:"12px"}} />
             <span >Kalab Tezera</span>
           </div>
           <div className="timeago">
-            <AttachFile style={{ color: "#2F2F2F" }} />
+            <AttachFile style={{ color: "#2F2F2F", fontSize:"12px"}} />
             <span>7 years ago</span>
           </div>
         </div>
+        <div className='detail'><button>Detail</button></div>
+
       </div>
+      
     </div>
   )
 }
-{/* <div className=""></div> */ }
