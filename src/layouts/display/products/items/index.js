@@ -3,13 +3,17 @@ import React, { useState } from 'react'
 import "../../../../styles/display/products/Items/item.scss"
 // material ui
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined } from '@mui/icons-material'
-export default function Item({open, setOpen}) {
+export default function Item({open, setOpen, style}) {
 
   return (
-    <div className='item'>
+    <div className='item' style={style?style:{
+      height:"95%",
+      width:"6.5%",
+      display:"flex",
+      flexDirection:"column"}}>
       {/* {renderModal()} */}
       <div className='top' >
-        <img src='https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg' alt='' />
+        <img src='https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg' alt='' style={{width:"100%",height:"100%"}}/>
         <div className="firstinsideimg">
           <div className="first">
             <span className="first">Featured</span>
