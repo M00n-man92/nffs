@@ -14,12 +14,13 @@ export default function Item({ layoutWrap, originalLayout }) {
           </div>
 
         </div>
-        {!originalLayout && layoutWrap ? <div className="header">
+        
+        <div className="secondinsideimg">
+          <div className={!originalLayout && layoutWrap ?"icons wrap":"icons"}>
+          {!originalLayout && layoutWrap ? <div className="header">
           <span >For Rent</span>
           <span >Hot Offer</span>
         </div> : <></>}
-        <div className="secondinsideimg">
-          <div className="icons">
             <div className="individual">
               <div className='shadow'>
                 <span>Favorite</span>
