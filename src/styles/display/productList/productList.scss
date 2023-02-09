@@ -1,0 +1,216 @@
+.productlist {
+  width: 100%;
+  height: 300vh;
+  background-color: #f7f8f9;
+  display: flex;
+  .layer {
+      // background-color: red;
+    margin-top: 3%;
+    width: 100%;
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    // background-color: red;
+    flex-direction: column;
+    .location {
+      height: 2%;
+      // background-color: red;
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 12px;
+        font-family: "Bellota-Light";
+        color: #585757;
+      }
+      span:nth-child(1) {
+        color: #00aeff;
+      }
+      .like {
+        font-size: 14px;
+      }
+    }
+    .header {
+      width: 100%;
+      height: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // background-color: red;
+      h3 {
+        font-size: 32px;
+        font-family: "Bellota-Bold";
+        // color: #585757;
+      }
+      .layoutchanger {
+        width: 8%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: blue;
+        
+        .detailed {
+          cursor: pointer;
+          width: 30%;
+          height: 50%;
+          // background-color: blue;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          // height: 100%;
+          .detailedsquares {
+            width: 100%;
+            height: 25%;
+            // background-color: yellow;
+            display: flex;
+            margin-bottom: 10%;
+            .smaller {
+              flex: 1;
+              border: 1px solid #585757;
+              border-radius: 1px;
+            }
+            .bigger {
+              margin-left: 3%;
+              flex: 4;
+              border: 1px solid #585757;
+              border-radius: 2px;
+            }
+          }
+        }
+        .detailed.true {
+          cursor: unset;
+          .smaller {
+            border: 2px solid #00aeff;
+          }
+          .bigger {
+            border: 2px solid #00aeff;
+          }
+        }
+        .pictured.true {
+          cursor: unset;
+          .squares {
+            .one {
+              border: 2px solid #00aeff;
+            }
+            .one:nth-child(2) {
+              border: 2px solid #00aeff;
+
+              margin-left: 10%;
+            }
+          }
+        }
+        .pictured {
+          cursor: pointer;
+          // margin-left: 10%;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .squares {
+            width: 70%;
+            height: 18%;
+            // background-color: yellow;
+            display: flex;
+            margin-bottom: 10%;
+            .one {
+              width: 40%;
+              border: 1px solid #585757;
+              border-radius: 2px;
+            }
+            .one:nth-child(2) {
+              border: 1px solid #585757;
+
+              margin-left: 10%;
+            }
+          }
+        }
+      }
+    }
+    .scrollers {
+      height: 80%;
+      display: flex;
+      width: 100%;
+      background-color: blue;
+      .table {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 70%;
+        // background-color: #00aeff;
+        .searchresults {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          height: 3%;
+          width: 100%;
+          // background-color: pink;
+          .found {
+            // background-color: blue;
+            span {
+              font-size: 16px;
+              font-family: "Bellota-Regular";
+              color: #585757;
+            }
+          }
+          .sort{
+            width: 65%;
+            height: 100%;
+            .sorting {
+              width: 100%;
+              // background-color: red;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              span {
+                font-size: 16px;
+                font-family: "Bellota-Regular";
+                color: #585757;
+              }
+              button {
+                margin-left: 2%;
+                background-color: #00aeff;
+                color: white;
+                width: 50%;
+                height: 80%;
+                border: none;
+                border-radius: 3px;
+              }
+            }
+          }
+          
+          // background-color: red;
+        }
+        .rows {
+          display: flex;
+          flex-direction: column;
+          height: 95%;
+          width: 100%;
+          background-color: #00aeff;
+        }
+        .rows.wrap{
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          height: 95%;
+          width: 100%;
+          background-color: blue;
+        }
+        // background-color: white;
+      }
+      .space {
+        width: 2%;
+        height: 100%;
+        // background-color: #00aeff;
+      }
+      .cities {
+        height: 50%;
+        width: 28%;
+        background-color: white;
+      }
+    }
+  }
+}
