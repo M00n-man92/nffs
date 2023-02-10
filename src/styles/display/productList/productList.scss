@@ -4,11 +4,11 @@
   background-color: #f7f8f9;
   display: flex;
   .layer {
-      // background-color: red;
+    // background-color: red;
     margin-top: 3%;
     width: 100%;
     margin-left: 8%;
-    margin-right: 8%;
+    margin-right: 6%;
     display: flex;
     // background-color: red;
     flex-direction: column;
@@ -48,7 +48,7 @@
         align-items: center;
         justify-content: space-between;
         // background-color: blue;
-        
+
         .detailed {
           cursor: pointer;
           width: 30%;
@@ -133,7 +133,7 @@
       height: 80%;
       display: flex;
       width: 100%;
-      background-color: blue;
+      // background-color: blue;
       .table {
         display: flex;
         flex-direction: column;
@@ -156,7 +156,7 @@
               color: #585757;
             }
           }
-          .sort{
+          .sort {
             width: 65%;
             height: 100%;
             .sorting {
@@ -181,7 +181,7 @@
               }
             }
           }
-          
+
           // background-color: red;
         }
         .rows {
@@ -189,15 +189,15 @@
           flex-direction: column;
           height: 95%;
           width: 100%;
-          background-color: #00aeff;
+          // background-color: #00aeff;
         }
-        .rows.wrap{
+        .rows.wrap {
           display: flex;
           flex-wrap: wrap;
           flex-direction: row;
           height: 95%;
           width: 100%;
-          background-color: blue;
+          // background-color: blue;
         }
         // background-color: white;
       }
@@ -207,9 +207,61 @@
         // background-color: #00aeff;
       }
       .cities {
+        right: 8%;
+        position:fixed;
+        left: 69%;
+        z-index:fixed;
         height: 50%;
-        width: 28%;
+        width: 24%;
         background-color: white;
+        display: flex;
+        flex-direction: column;
+        .popularcities {
+          // padding: 2%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          h3 {
+            font-size: 32px;
+            font-family: "Bellota-Bold";
+          }
+          .pointers {
+            margin-bottom: 4%;
+            display: flex;
+            width: 100%;
+            // margin-left: 4%;
+            align-items: center;
+            justify-content: space-between;
+            .singular {
+              display: flex;
+              align-items: center;
+              // justify-content: space-between;
+              span {
+                font-size: 16px;
+                font-family: "Bellota-Regular";
+                color: #00aeff;
+              }
+              .arrow{
+                font-size: 16px;
+                color: #00aeff;
+              }
+            }
+            span {
+              font-size: 16px;
+              font-family: "Bellota-Light";
+            }
+          }
+        }
+        .sapce{
+          height: 10%;
+          width: 100%;
+          background-color: #f7f8f9;
+        }
+        .featured{
+          height: 400px;
+          width: 500%;
+          // background-color: red;
+        }
       }
     }
   }

@@ -117,7 +117,7 @@ function DataTable({
   }
   return (
     <>
-      {/* <Table {...getTableProps()}>
+      <Table {...getTableProps()}>
         <TableBody {...getTableBodyProps()}>
           {page.map((row, key) => {
             prepareRow(row);
@@ -136,8 +136,8 @@ function DataTable({
             );
           })}
         </TableBody>
-      </Table> */}
-      {/* <Box
+      </Table>
+      <Box
         display="flex"
         flexDirection={{ xs: "column", sm: "row" }}
         justifyContent="space-between"
@@ -179,7 +179,7 @@ function DataTable({
             )}
           </Pagination>
         )}
-      </Box> */}
+      </Box>
     </>
   );
 };
