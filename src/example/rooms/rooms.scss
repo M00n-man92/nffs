@@ -1,0 +1,17 @@
+.rooms {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  .icons {
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 14px;
+      font-family: "Bellota-Light";
+    }
+  }
+  span {
+    font-size: 14px;
+    font-family: "Bellota-Light";
+  }
+}
