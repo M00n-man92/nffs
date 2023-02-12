@@ -118,7 +118,7 @@ export default function Products() {
       <div className="slider">
 
         <div className="slidercomponenet" style={{ transform: `translateX(${-percent * slider}%)` }}>
-          <Item open={open} setOpen={setOpen} />
+          <Item  />
           <Item open={open} setOpen={setOpen} />
           <Item open={open} setOpen={setOpen} />
           <Item open={open} setOpen={setOpen} />

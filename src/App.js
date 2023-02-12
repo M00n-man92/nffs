@@ -1,3 +1,5 @@
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+
 // css for fonts
 import "./App.css";
 import Display from "./layouts/display";
@@ -8,14 +10,22 @@ import DataTable from "./example/Table"
 import ProductList from "./layouts/display/productList";
 import Property from "./layouts/display/property"
 function App() {
-const iColumns = ["hme","apartmet","pepoke","heartbreak","my bad","the past is the paset","if i die today"]
-const iRows = ["uncle iroh", "prince zuko", "start lord","drax","groot"]  
-return (
+  const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
+  const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
+  return (
+
     <div className="App" >
       <Intro />
       <NavBar />
-      <Property />
-      {/* <ProductList /> */}
+      <Routes>
+        <Route path="/search/:token" element={<ProductList />} />
+        <Route path="/" element={<Display />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+
+
+
+      {/* <Property /> */}
       {/* <Display /> */}
 
       {/* <DataTable 
@@ -25,9 +35,10 @@ return (
         showTotalEntries
       /> */}
       {/* <div style={{marginTop:"19%",marginLeft:"8%", marginRight:"8%", width:"100%", backgroundColor:"red", height:"150vh" }}> */}
-        
+
       {/* </div> */}
     </div>
+
   );
 }
 
