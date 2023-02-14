@@ -8,18 +8,20 @@ import Modal from '@mui/material/Modal';
 // modals 
 import { loginModal } from "./modal/loginModal/index"
 import { registerModal } from './modal/registerModal/index';
+import Sidebar from '../sidebar';
 export default function NavBar() {
   const [openModal, setOpenModal] = useState(true);
   const [changeRegister, setChangeRegister] = useState(true);
-  const [account, setAccount] = useState(""); 
+  const [account, setAccount] = useState("");
+  const [openSidebar, setOpenSidebar] = useState(false);
   const renderModal = () => {
     return (
       <Modal
-        style={{ 
+        style={{
           opacity: "1",
-          border:"none",
-          borderRadius:"4px",
-          overflow:"auto"
+          border: "none",
+          borderRadius: "4px",
+          overflow: "auto"
         }}
         open={!openModal}
         onClose={(e) => { setOpenModal(!openModal) }}
@@ -27,8 +29,8 @@ export default function NavBar() {
         aria-describedby="modal-modal-description"
       >
 
-        { changeRegister? loginModal(setOpenModal, openModal, setChangeRegister) : registerModal(setOpenModal, openModal, setChangeRegister, setAccount, account) }
-        
+        {changeRegister ? loginModal(setOpenModal, openModal, setChangeRegister) : registerModal(setOpenModal, openModal, setChangeRegister, setAccount, account)}
+
       </Modal>
     )
   }
@@ -37,7 +39,14 @@ export default function NavBar() {
       {renderModal()}
       <div className='navitems'>
         <div className='navigators'>
-
+          <div className={openSidebar?"lines open":"lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}>
+            <div className="single">
+            </div>
+            <div className="single">
+            </div>
+            <div className="single">
+            </div>
+          </div>
           <div className='verticallines'></div>
           <div className='containers'>
             <span> HOME </span>
@@ -74,7 +83,7 @@ export default function NavBar() {
 
         </div>
       </div>
-
+      <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
     </div>
   )
 }

@@ -1,0 +1,46 @@
+.sidebar {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  width: 20.5%;
+  height: 700%;
+  background-color: #004274;
+  transition: all 1s ease;
+
+  .catagory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      font-size: 12px;
+      font-family: "Bellota-Bold";
+      color: white;
+    }
+    .lists {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      cursor: pointer;
+      border-bottom: 1px solid #00578f;
+      h3 {
+        font-size: 12px;
+        font-family: "Bellota-Bold";
+        color: white;
+      }
+      &:hover {
+        background-color: #00578f;
+        h3 {
+          color: #00aeff;
+        }
+      }
+    }
+  }
+}
+.sidebar.close {
+  opacity: 0;
+  transition: all 1s ease;
+
+  width: 0.5%;
+  height: 00%;
+}

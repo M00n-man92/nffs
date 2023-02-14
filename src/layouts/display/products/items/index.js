@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // css class
-import "../../../../styles/display/products/Items/item.Item.scss"
+import "../../../../styles/display/products/Items/item.scss"
 // material ui
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined } from '@mui/icons-material'
 export default function Item({open, setOpen, style}) {

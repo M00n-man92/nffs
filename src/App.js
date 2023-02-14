@@ -9,6 +9,7 @@ import NavBar from "./layouts/header/navbar";
 import DataTable from "./example/Table"
 import ProductList from "./layouts/display/productList";
 import Property from "./layouts/display/property"
+import Blog from "./layouts/pages/blog/item";
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
@@ -19,7 +20,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/search/:token" element={<ProductList />} />
-        <Route path="/" element={<Display />} />
+        <Route path="/" element={<Blog />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 
