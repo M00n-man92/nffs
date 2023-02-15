@@ -7,7 +7,10 @@ import Locator from "../../../../example/locator"
 import ImageBox from '../../../../example/imagebox'
 // icon classes for the blog
 import Rooms from "../../../../example/rooms"
+// data for the blogs
+import { blogs } from "../data"
 import { AttachFile, NavigateNext } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
 export default function Blog() {
   return (
     <div className='blog'>
@@ -18,162 +21,26 @@ export default function Blog() {
         </div>
         <h4>Blog</h4>
         <div className='blogpost'>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-            <div className='bottom'>
-              <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-              <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
+          {blogs.map((item, index) => (
+            <div className='single' key={index + 23}>
+              <div className='topblogimage'>
+                <ImageBox src={item.img} />
+              </div>
 
+              <div className='bottom'>
+                <div className='bottomtop'>
+                  <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
+                  <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
+
+                </div>
+                <h3>{item.name}</h3>
+                <span className='dec'> {item.passages[0].split("", 20)} ...</span>
+                <Link to={`/blog/${index}`} className="link">
+                  <span className='link'>Continue Reading</span>
+                </Link>
+              </div>
             </div>
-            <h3>Header</h3>
-            {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-            <span className='dec'> this be the desc</span>
-            <span className='link'>Continue Reading</span>
-
-          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>
-          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-              <h3>Header</h3>
-              {/* Todo description should end with an elipsise since I can't showa all of the dec */}
-              <span className='dec'> this be the desc</span>
-              <span className='link'>Continue Reading</span>            </div>          </div>
-          <div className='single'>
-            <ImageBox src={"https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg"} />
-
-            <div className='bottom'>
-              <div className='bottomtop'>
-                <Rooms icons={<AttachFile style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-                <Rooms icons={<NavigateNext style={{ fontSize: "14px" }} />} number={"March 7, 2014"} />
-
-              </div>
-
-            </div>          </div>
-
-
+          ))}
         </div>
 
       </div>

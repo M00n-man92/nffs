@@ -1,0 +1,124 @@
+.singleblog {
+  width: 100%;
+  height: 150vh;
+  background-color: #f7f8f9;
+
+  // background-color: blue;
+  display: flex;
+  flex-direction: column;
+  .insideblog {
+    margin-left: 8%;
+    margin-right: 6%;
+    margin-top: 3%;
+    height: 100%;
+
+    .locator {
+      // background-color: red;
+
+      display: flex;
+      // align-items: center;
+      height: 3%;
+      // width: 100%;
+      // background-color: red;
+    }
+    .blogcontainer {
+      display: flex;
+      justify-content: space-between;
+      height: 95%;
+      width: 100%;
+      .leftsideblog {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+        background-color: white;
+        .blogheader {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10%;
+          // background-color: red;
+          h3 {
+            font-size: 23px;
+            font-family: "Bellota-Bold";
+            // color: #6c757d;
+            margin-bottom: -0.1%;
+          }
+        }
+        img {
+          margin-top: 1%;
+          height: 40%;
+          width: 100%;
+          object-fit: cover;
+        }
+        p {
+          margin-left: 7%;
+          margin-top: 5%;
+          margin-right: 7%;
+          // text-align: center;
+          font-size: 16px;
+          font-family: "Bellota-Regular";
+        }
+        // background-color: aquamarine;
+      }
+      .rightsideblog {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        height: 100%;
+        background-color: white;
+        .blogsearchbox {
+          // width: 100%;
+          height: 13%;
+          margin-left: 3%;
+          margin-right: 3%;
+          margin-top: 3%;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+
+          .searchbox {
+            margin-top: 2%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .textfield {
+              width: 65%;
+              margin-bottom: 3%;
+            }
+            button {
+              width: 30%;
+              height: 75%;
+              border: none;
+              border-radius: 4px;
+            }
+          }
+        }
+        .recentblogs{
+          display: flex;
+          flex-direction: column;
+          margin-left: 5%;
+          margin-right: 3%;
+          margin-top: 10%;
+          background-color: white;
+          height: 40%;
+          justify-content: space-between;
+
+          h2{
+            // background-color: red;
+            font-size: 23px;
+          font-family: "Bellota-Bold";
+          // margin-bottom: -0.1%;
+          }
+          .recently{
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+// height: ;
+          }
+        }
+        // background-color:darkgoldenrod;
+      }
+    }
+  }
+}

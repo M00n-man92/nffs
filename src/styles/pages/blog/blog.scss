@@ -35,56 +35,76 @@
       // flex-direction: column;
       flex-wrap: wrap;
       align-items: flex-start;
+
       justify-content: space-around;
       .single {
-        width: 30%;
-        height: 20%;
+        margin-right: 10px;
+        width: 20%;
+        // height: 20%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: white;
         flex-grow: 0;
         &:nth-child(even) {
-          height: 22%;
+          height: 32%;
+          .topblogimage {
+            height: 70%;
+            // background-color: red;
+          }
+          .bottom {
+            height: 30%;}
           // background-color: oldlace;
           // flex-grow: 1;
         }
         &:nth-child(odd) {
-          height: 18%;
+          height: 25%;
           // background-color: crimson;
           flex-shrink: 7;
+          .topblogimage {
+            height: 80%;
+            // background-color: red;
+          }
+          .bottom {
+            height: 20%;
+          }
+        }
+        .topblogimage {
+          height: 70%;
+          // background-color: red;
         }
         .bottom {
           margin-left: 3%;
           margin-top: 3%;
           margin-right: 3%;
-          height: 50%;
+          // height: 30%;
           // width: 100%;
           display: flex;
           // background-color: red;
           flex-direction: column;
           justify-content: space-evenly;
           span {
-              font-size: 12px;
-            }
+            font-size: 12px;
+          }
           .bottomtop {
             display: flex;
             align-items: center;
-            
           }
-          h3{
-            
+          h3 {
             font-size: 16px;
             font-family: "Bellota-Bold";
+            margin-bottom: -0.1%;
           }
-          .dec{
-            font-size: 14px;
+          .dec {
+            font-size: 12px;
             font-family: "Bellota-Light";
           }
-          .link{
+          .link {
             color: #00aeff;
             font-size: 14px;
             font-family: "Bellota-Light";
+            cursor: pointer;
+            text-decoration: none;
           }
           // background-color: red;
         }

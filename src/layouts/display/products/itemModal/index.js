@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 /// css Class
 import "../../../../styles/display/products/itemModal/itemModal.scss"
 // mui icons
-import { LocationOn, FavoriteBorder, Close, UnfoldMore, NavigateBefore, NavigateNext,  SingleBed, SquareFoot, Shower, AttachFile, AccountCircle, AccountCircleOutlined, GarageSharp  } from '@mui/icons-material';
+import { LocationOn, FavoriteBorder, Close, UnfoldMore, NavigateBefore, NavigateNext,  SingleBed, SquareFoot, Shower, AttachFile, GarageSharp  } from '@mui/icons-material';
 
 export default function ItemModal({ open, setOpen }) {
   // TODO the image swipper should go through an array of images instead of swipping.

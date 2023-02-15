@@ -10,6 +10,7 @@ import DataTable from "./example/Table"
 import ProductList from "./layouts/display/productList";
 import Property from "./layouts/display/property"
 import Blog from "./layouts/pages/blog/item";
+import SingleBlog from "./layouts/pages/blog";
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
@@ -22,6 +23,7 @@ function App() {
         <Route path="/search/:token" element={<ProductList />} />
         <Route path="/" element={<Blog />} />
         <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/blog/:blogname" element={<SingleBlog />} />
       </Routes>
 
 
