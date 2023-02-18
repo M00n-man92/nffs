@@ -14,7 +14,7 @@ export default function SingleBlog() {
   const location = useLocation()
 
   const id = location.pathname.split("/")[2]
-  console.log(id)
+  // console.log(id)
 
   return (
     <div className="singleblog">

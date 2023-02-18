@@ -3,8 +3,8 @@
   flex-direction: column;
   margin-left: 8%;
   margin-right: 8%;
-  margin-top: 19%;
-  height: 110vh;
+  margin-top: 3%;
+  height: 210vh;
   // background-color: red;
   .header {
     display: flex;
@@ -24,7 +24,7 @@
     }
   }
   .slidercontroller {
-    height: 5%;
+    height: 2.5%;
     // background-color: red;
     display: flex;
     align-items: center;
@@ -53,11 +53,14 @@
     // transition: all 1.5s ease-in-out;
     // background-color: #00aeff;
     overflow: hidden;
-    // display: flex;
+    display: flex;
+    
     // flex-direction: row;
     .slidercomponenet {
       transition: all 1.5s ease-in-out;
       display: flex;
+      flex-direction: column;
+    flex-wrap: wrap;
       // align-items: center;
       // justify-content: ;
       height: 100%;
@@ -66,7 +69,7 @@
     }
   }
   .circles {
-    height: 10%;
+    height: 5%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // css class 
 import "../../../styles/layout/side/sidebar.scss"
 export default function Sidebar({ open, setOpen }) {
@@ -7,11 +8,12 @@ export default function Sidebar({ open, setOpen }) {
       <div className='catagory'>
         <h3>Catagory</h3>
         <div className='lists'>
-          <h3>
-            Firms
-          </h3>
+          <Link className='link' to="/firms">
+            <h3>
+              Firms
+            </h3>
+          </Link>
         </div>
-
         <div className='lists'>
           <h3>
             Manufacturer

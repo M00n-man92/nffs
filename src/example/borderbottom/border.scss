@@ -1,0 +1,17 @@
+.border{
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #dce0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .firstborder{
+    font-size: 16px;
+    font-family: "Bellota-Bold";
+
+  }
+  .secondborder{
+    font-size: 16px;
+    font-family: "Bellota-Light";
+  }
+}

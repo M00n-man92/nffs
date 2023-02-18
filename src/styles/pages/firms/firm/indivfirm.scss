@@ -1,0 +1,209 @@
+.individualfirm {
+  height: 500vh;
+  width: 100%;
+  background-color: #f7f8f9;
+  display: flex;
+  flex-direction: column;
+  // background-color: red;
+
+  // background-color: red;
+  .firmheader {
+    // width: 100%;
+    width: 100%;
+    height: 10%;
+    // background-color: red;
+    // display: flex;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%);
+    }
+    .firminforight {
+      // width: 30%;
+      height: 100%;
+      position: relative;
+      top: -100%;
+      left: 60%;
+      .firmimagecontainer {
+        width: 30%;
+        height: 100%;
+        display: flex;
+      }
+      .imageheaders {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // background-color: red;
+        .insideheaders {
+          margin-left: 6%;
+          margin-top: 4%;
+          // margin-bottom: 5%;
+          margin-right: 5%;
+          // background-color: red;
+          height: 50%;
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid #dce0e0;
+          justify-content: space-around;
+          .titlefirm {
+            font-size: 33px;
+            font-family: "Bellota-Bold";
+          }
+          .link {
+            margin-left: 4%;
+            font-size: 14px;
+            font-family: "Bellota-Light";
+          }
+          // width: 100%;
+        }
+        .lowerdetails {
+          margin-left: 6%;
+          // margin-top: 4%;
+          margin-bottom: 5%;
+          margin-right: 5%;
+          // background-color: red;
+          height: 50%;
+          display: flex;
+          flex-direction: column;
+          // border-bottom: 1px solid #dce0e0;
+          justify-content: space-around;
+          .llicence {
+            display: flex;
+            align-items: center;
+            // margin-top: /%;
+            .bolder {
+              font-size: 16px;
+              font-family: "Bellota-Bold";
+            }
+            span {
+              font-size: 16px;
+              font-family: "Bellota-Light";
+            }
+          }
+          .buttons {
+            display: flex;
+            width: 50%;
+            height: 30%;
+            // background-color: red;
+            justify-content: space-between;
+            button {
+              background-color: #28a745;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              width: 40%;
+              &:nth-child(2) {
+                background-color: white;
+                color: #28a745;
+                border: 1px solid #28a745;
+                // border: none;
+                border-radius: 4px;
+                width: 40%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // height: 280%;
+  }
+  .insideindiv {
+    height: 100%;
+    // width: 100%;
+    margin-left: 8%;
+    margin-right: 6%;
+    margin-top: 3%;
+    .firmmiddle {
+      margin-top: 3%;
+      height: 22%;
+      width: 100%;
+      display: flex;
+      // background-color: red;
+      justify-content: space-between;
+      .aboutfirm {
+        height: 100%;
+        width: 70%;
+        background-color: white;
+        .infocontainer {
+          margin-left: 6%;
+          margin-top: 4%;
+          margin-right: 5%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          // background-color: #28a745;
+          .infotilte {
+            margin-top: 5%;
+            font-size: 16px;
+            font-family: "Bellota-Bold";
+          }
+          p {
+            margin-top: 4%;
+            margin-bottom: 1%;
+            font-size: 16px;
+            font-family: "Bellota-Light";
+          }
+        }
+      }
+      .contactfirm {
+        height: 60%;
+        width: 28%;
+        background-color: white;
+        .containing {
+          margin-top: 4%;
+          margin-left: 2%;
+          // margin-right: 5%;
+          height: 100%;
+          display: flex;
+          justify-content: space-around;
+          // background-color: red;
+
+          flex-direction: column;
+          .contacttilte {
+            margin-top: 5%;
+            font-size: 16px;
+            font-family: "Bellota-Bold";
+          }
+          .contactimage {
+            margin-bottom: 8%;
+            margin-top: 6%;
+            width: 100%;
+            height: 30%;
+          }
+          .website {
+            // background-color: red;
+
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 30%;
+          }
+        }
+      }
+    }
+    .firmbottom {
+      margin-top: 4%;
+      display: flex;
+      // flex-wrap: wrap;
+      flex-direction: column;
+      height: 60%;
+      width: 100%;
+      background-color: white;
+      .projectstitle {
+        font-size: 33px;
+        font-family: "Bellota-Bold";
+      }
+      .firmprojects {
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

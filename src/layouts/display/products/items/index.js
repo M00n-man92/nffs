@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 // css class
-import "../../../../styles/display/products/Items/item.scss"
+import "../../../../styles/display/products/Items/productsingleitem.scss"
 // material ui
 import { FavoriteBorder, UnfoldMore, SingleBed, SquareFoot, Shower, AttachFile, AccountCircleOutlined } from '@mui/icons-material'
 export default function Item({open, setOpen, style}) {
-/* style={style?style:{
-      height:"95%",
-      width:"6.5%",
-      display:"flex",
-      flexDirection:"column"}} */
+const changeSize={style:{
+      height:"45%",
+      marginLeft:"2%",
+      // backgroundColor:"red"
+      width:"30.5%",
+      // display:"flex",
+      // flexDirection:"column"
+    }}
   return (
-    <div className='item' >
+    <div className='productsingleitem' style={style&&changeSize.style} >
       {/* {renderModal()} */}
       <div className='top' >
         <img src='https://i.pinimg.com/564x/22/af/de/22afde433de829005765ad3f4b0199c0.jpg' alt='' style={{width:"100%",height:"100%"}}/>

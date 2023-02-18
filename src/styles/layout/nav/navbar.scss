@@ -3,35 +3,37 @@
   width: 100%;
   overflow: visible;
   background-color: #004274;
-  transition      : all 1s ease;
+  transition: all 1s ease;
 
   .navitems {
     height: 100%;
     margin-left: 8%;
     margin-right: 8%;
     display: flex;
+    justify-content: space-between;
     // width: 83%;
     .navigators {
-      flex: 0.8;
+      flex: 4;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+
       height: inherit;
       // width: 10%;
       // background-color: red;
       .lines {
-        display: flex;
+        display: none;
+        // display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
         width: 100%;
         height: 100%;
         cursor: pointer;
-        transition      : all 2s ease;
+        transition: all 2s ease;
 
         // background-color: red;
         .single {
-          transition      : all 2s ease;
+          transition: all 2s ease;
 
           // margin-top: 10%;
           margin-bottom: 4%;
@@ -53,27 +55,44 @@
 
         .single {
           // margin-top: 14%;
-          transition      : all 2s ease;
+          transition: all 2s ease;
 
           // display: ;
           &:first-child {
-            // margin-top: 4%;
+            margin-top: 1%;
             background-color: white;
             transform: rotate(145deg);
           }
 
           &:nth-child(2) {
             // margin-bottom: 4%;
-            margin-top: -11%;
+            margin-top: -10%;
             background-color: white;
 
             transform: rotate(-145deg);
-
           }
 
           &:last-child {
-opacity: 0;
+            animation: square 1s ease-in 1s infinite alternate none running;
+            // opacity: 0;
             background-color: white;
+          }
+          @keyframes square {
+            0% {
+              opacity: 0;
+            }
+            25% {
+              opacity: 0;
+            }
+            50% {
+              opacity: 0;
+            }
+            75% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 0;
+            }
           }
         }
       }
@@ -81,29 +100,37 @@ opacity: 0;
         height: 100%;
         border-left: 1px solid #00578f;
       }
-      .containers {
+      .link {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        cursor: pointer;
+        // background-color: red;
+        width: 200%;
+        height: 75%;
 
-        span {
-          font-size: 12px;
-          font-family: "Bellota-Bold";
-          color: white;
+        .containers {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          width: 200%;
+          cursor: pointer;
+          border-right: 1px solid #00578f;
+          span {
+            font-size: 12px;
+            font-family: "Bellota-Bold";
+            color: white;
+          }
         }
-      }
-      .containers:hover {
-        background-color: #00578f;
-        span {
-          color: #00aeff;
+        .containers:hover {
+          background-color: #00578f;
+          span {
+            color: #00aeff;
+          }
         }
       }
     }
     .usercred {
-      flex: 1;
+      // background-color: RED;
+      flex: 0.1;
       display: flex;
       align-items: center;
       justify-content: flex-end;

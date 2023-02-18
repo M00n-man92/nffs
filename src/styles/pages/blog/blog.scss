@@ -29,48 +29,66 @@
     .blogpost {
       width: 100%;
       height: 90%;
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 250px);
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+grid-row: 10px;
 
       // background-color: blue;
       // flex-direction: column;
-      flex-wrap: wrap;
-      align-items: flex-start;
+      // flex-wrap: wrap;
+      // align-items: flex-start;
 
-      justify-content: space-around;
+      // justify-content: space-around;
       .single {
-        margin-right: 10px;
-        width: 20%;
-        // height: 20%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         background-color: white;
-        flex-grow: 0;
+        grid-row-end: span 26;
+        display: flex;
+border-radius: 16px;
+        margin: 10px 15px;
+        // width: 20%;
+        // display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // background-color: white;
+        // flex-grow: 0;
+        box-shadow: 0px 13px 5px 0px rgba(0,0,0,0.22);
+-webkit-box-shadow: 0px 13px 5px 0px rgba(0,0,0,0.22);
+-moz-box-shadow: 0px 13px 5px 0px rgba(0,0,0,0.22);
         &:nth-child(even) {
-          height: 32%;
-          .topblogimage {
-            height: 70%;
-            // background-color: red;
-          }
-          .bottom {
-            height: 30%;}
-          // background-color: oldlace;
-          // flex-grow: 1;
+          grid-row-end: span 26;
+          // height: 32%;
+          // .topblogimage {
+          //   height: 60%;
+          //   // background-color: red;
+          // }
+          // .bottom {
+          //   height: 40%;}
+          // // background-color: oldlace;
+          // // flex-grow: 1;
         }
         &:nth-child(odd) {
-          height: 25%;
-          // background-color: crimson;
-          flex-shrink: 7;
-          .topblogimage {
-            height: 80%;
-            // background-color: red;
-          }
-          .bottom {
-            height: 20%;
-          }
+          grid-row-end: span 16;
+          // height: 32%;
+          // // background-color: crimson;
+          // flex-shrink: 7;
+          // .topblogimage {
+          //   height: 70%;
+          //   // background-color: red;
+          // }
+          // .bottom {
+          //   height: 30%;
+          // }
+        }
+        &:nth-child(3n){
+          grid-row-end: span 30;
         }
         .topblogimage {
+          border-radius: 16px;
           height: 70%;
+          display: flex;
           // background-color: red;
         }
         .bottom {

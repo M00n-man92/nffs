@@ -9,6 +9,7 @@ import Modal from '@mui/material/Modal';
 import { loginModal } from "./modal/loginModal/index"
 import { registerModal } from './modal/registerModal/index';
 import Sidebar from '../sidebar';
+import { Link } from 'react-router-dom';
 export default function NavBar() {
   const [openModal, setOpenModal] = useState(true);
   const [changeRegister, setChangeRegister] = useState(true);
@@ -39,34 +40,92 @@ export default function NavBar() {
       {renderModal()}
       <div className='navitems'>
         <div className='navigators'>
-          <div className={openSidebar?"lines open":"lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}>
+          {/* <div className={openSidebar ? "lines open" : "lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}>
             <div className="single">
             </div>
             <div className="single">
             </div>
             <div className="single">
             </div>
-          </div>
-          <div className='verticallines'></div>
-          <div className='containers'>
-            <span> HOME </span>
-          </div>
-          <div className='verticallines'></div>
-          <div className='containers'>
-            <span> BLOG </span>
-          </div>
-          <div className='verticallines'></div>
-          <div className='containers'>
-            <span> ALL PROPERTIES </span>
-          </div>
-          <div className='verticallines'></div>
-          <div className='containers'>
-            <span> AGENTS </span>
-          </div>
-          <div className='verticallines'></div>
-          <div className='containers'>
-            <span> ABOUT US </span>
-          </div>
+          </div> */}
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/">
+            <div className='containers'>
+
+              <span> HOME </span>
+
+            </div>
+          </Link>
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> BLOG </span>
+
+            </div>
+          </Link>
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/firms">
+            <div className='containers'>
+
+              <span> FIRM </span>
+
+            </div>
+          </Link>
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> PRODUCT</span>
+
+            </div>
+          </Link>
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> PROJECT </span>
+
+            </div>
+          </Link>
+          {/* <div className='verticallines'></div> */}
+          
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> PROFESTTIONAL </span>
+
+            </div>
+          </Link>
+          {/* <div className='verticallines'></div> */}
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> TENDER </span>
+
+            </div>
+          </Link>
+
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+              <span> MATERIAL </span>
+
+            </div>
+          </Link>
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> MANUFACTURER </span>
+
+            </div>
+          </Link>
+          <Link className='link' to="/blogs">
+            <div className='containers'>
+
+              <span> VR </span>
+            </div>
+          </Link>
         </div>
         <div className='usercred'>
           <AccountCircleOutlined
@@ -75,12 +134,12 @@ export default function NavBar() {
             onClick={(e) => { setOpenModal(!openModal) }}
           />
 
-          <div className='create'>
+          {/* <div className='create'>
             <button>
               CREATE A LISTING
             </button>
           </div>
-
+ */}
         </div>
       </div>
       <Sidebar open={openSidebar} setOpen={setOpenSidebar} />

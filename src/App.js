@@ -11,19 +11,24 @@ import ProductList from "./layouts/display/productList";
 import Property from "./layouts/display/property"
 import Blog from "./layouts/pages/blog/item";
 import SingleBlog from "./layouts/pages/blog";
+import Firms from "./layouts/pages/firms";
+import Firm from "./layouts/pages/firms/firm"
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
   return (
 
     <div className="App" >
-      <Intro />
+      {/* <Intro /> */}
       <NavBar />
       <Routes>
         <Route path="/search/:token" element={<ProductList />} />
-        <Route path="/" element={<Blog />} />
+        <Route path="/" element={<Display />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/blog/:blogname" element={<SingleBlog />} />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/firms" element={<Firms />} />
+        <Route path="/firm/:firmnameorid" element={<Firm />} />
       </Routes>
 
 

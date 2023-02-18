@@ -12,7 +12,7 @@ export default function Products() {
   // int that changes to move the box to the right or left
   const [slider, setSlider] = useState(0)
   // percent that changes every time the box moves by 0.1
-  const [percent, setPercent] = useState(6);
+  const [percent, setPercent] = useState(34);
   // count to hold an initial value that decreases every time the box moves to the right
   const [count, setCount] = useState(0);
   // cirlce at the bottom of the page tracker
@@ -24,14 +24,14 @@ export default function Products() {
   const handleMoveLeft = () => {
     if (slider === 0) {
       setSlider(0);
-      setPercent(6);
+      setPercent(34);
       setCount(0)
     }
     else if (slider >= 1) {
       setSlider(slider - 1);
       if (slider === 0) {
         setSlider(0);
-        setPercent(6);
+        setPercent(34);
         setCount(0)
       }
       // setPercent(percent+(0.6+count));
@@ -64,7 +64,7 @@ export default function Products() {
 
   // slides the products one step to the right with every 5 secs 
   useEffect(() => {
-    autoPlay.current = heandler
+    autoPlay.current = heandler;
   })
   // setInterval(()=>heandler(),8000)
   useEffect(() => {
@@ -118,18 +118,20 @@ export default function Products() {
       <div className="slider">
 
         <div className="slidercomponenet" style={{ transform: `translateX(${-percent * slider}%)` }}>
-          <Item  />
-          <Item open={open} setOpen={setOpen} />
-          <Item open={open} setOpen={setOpen} />
-          <Item open={open} setOpen={setOpen} />
-          <Item open={open} setOpen={setOpen} />
-          <Item open={open} setOpen={setOpen} />
-          <Item open={open} setOpen={setOpen} />
-          <Item open={open} setOpen={setOpen} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
+          <Item open={open} setOpen={setOpen} style={"smaller"} />
         </div>
       </div>
       <div className='circles'>
-        <div id={circleId[0]} className={slider === circleId[0] ? "individualcircle own" : "individualcircle"} onClick={(e) => { handleMove(0) }}></div>
+        <div id={circleId[0]} className={slider === circleId[0] ? "individualcircle own" : "individualcircle"} onClick={(e) => { handleMove(0); setSlider(0);
+      setPercent(6);
+      setCount(0) }}></div>
         <div id={circleId[1]} className={slider === circleId[1] ? "individualcircle own" : "individualcircle"} onClick={(e) => { handleMove(1) }}></div>
         <div id={circleId[2]} className={slider === circleId[2] ? "individualcircle own" : "individualcircle"} onClick={(e) => { handleMove(2) }}></div>
         <div id={circleId[3]} className={slider === circleId[3] ? "individualcircle own" : "individualcircle"} onClick={(e) => { handleMove(3) }}></div>

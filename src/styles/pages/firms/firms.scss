@@ -1,0 +1,101 @@
+.firms {
+  width: 100%;
+  height: 200vh;
+  background-color: #f7f8f9;
+  .insidefirms {
+    margin-left: 8%;
+    margin-top: 3%;
+    margin-right: 6%;
+    // background-color: aliceblue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    height: 3%;
+    // background-color: red;
+  }
+  .firmsttilte {
+    margin-top: -0.1%;
+    // background-color: red;
+    // margin-left: 4%;
+    font-size: 33px;
+    font-family: "Bellota-Bold";
+    // color: #6C757D;
+  }
+  .multiplefirms {
+    display: flex;
+    justify-content: space-between;
+    height: 95%;
+    width: 100%;
+    .leftpartfirm {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      height: 100%;
+      .singelfirmcontainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3%;
+        margin-right: 6%;
+        // margin-top: 1%;
+        height: 100%;
+        // background-color: red;
+        .singualrfirm {
+          display: flex;
+          // justify-content: space-between;
+          height: 40%;
+          // background-color: red;
+          width: 100%;
+          margin-bottom: 1%;
+          // display: none;
+        }
+      }
+    }
+    .rightpartfirm {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      height: 55%;
+
+      background-color: white;
+      .handlers {
+        height: 60%;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        margin-left: 4%;
+        margin-right: 4%;
+        margin-top: 5%;
+        .textfield {
+          display: flex;
+          align-items: center;
+          margin-top: 4%;
+          // height: 10%;
+          width: 80%;
+          margin-bottom: 3%;
+        }
+        button{
+          background-color: #00aeff;
+          color: white;
+          border: none;
+          border-radius: 3px;
+          width: 80%;
+          height: 50%;
+          margin-bottom: 1%;
+        }
+      }
+      .searchheader {
+        font-size: 23px;
+        font-family: "Bellota-Bold";
+      }
+      .firmcatagories{
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

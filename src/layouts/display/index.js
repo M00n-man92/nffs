@@ -8,14 +8,15 @@ import Search from "./search";
 export default function Display() {
   return (
     <div className="display">
-      <Front />
-      <div className="adjusting">
-      <Search />
-      </div>
-      <div >
-        <Products />
-        
-      </div>
+      {/* <Front /> */}
+      <Products />
+      {/* <div className="adjusting">
+
+      </div> */}
+      {/* <div > */}
+
+
+      {/* </div> */}
     </div>
   )
 }

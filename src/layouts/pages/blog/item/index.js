@@ -24,7 +24,7 @@ export default function Blog() {
           {blogs.map((item, index) => (
             <div className='single' key={index + 23}>
               <div className='topblogimage'>
-                <ImageBox src={item.img} />
+                <ImageBox src={item.img} size="16px" />
               </div>
 
               <div className='bottom'>

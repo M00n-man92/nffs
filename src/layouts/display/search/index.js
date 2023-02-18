@@ -6,6 +6,7 @@ import Select from '@mui/material/Select';
 import FormControl from "@mui/material/FormControl";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 export default function Search() {
   // clicked change the color of the headers
@@ -51,11 +52,11 @@ export default function Search() {
         {headers.map((items, index) => (
           <div
             className='container'
-            key={index+90}
-            style={pressedHeader===index?{backgroundColor:"white",color:"black"}:{cursor: "pointer"}}
-            onClick={(e)=>{setPressedHeader(index)}}
+            key={index + 90}
+            style={pressedHeader === index ? { backgroundColor: "white", color: "black" } : { cursor: "pointer" }}
+            onClick={(e) => { setPressedHeader(index) }}
           >
-            
+
             <span>
               {items}
             </span>
@@ -137,7 +138,9 @@ export default function Search() {
         </div>
         <div className='items'>
           <span></span>
-          <button> Search </button>
+
+          <button style={{ cursor: "pointer" }}>Search<Link to={"/search/serachreaaults"} className="link"> search </Link></button>
+
         </div>
       </div>
     </div>

@@ -1,0 +1,55 @@
+.individualfirming{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  // background-color: red;
+  justify-content: space-between;
+  // background-color: white;
+
+  .imagecontanier{
+    width: 48%;
+    height: 100%;
+
+  }
+  .imageinfocontainer{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    // background-color: blue;
+    .lined{
+      margin-top: 1%;
+      height: 15%;
+      width: 100%;
+      // background-color: orange;
+    }
+    .firmholdertitle{
+      font-size: 23px;
+      font-family: "Bellota-Bold";
+      margin-bottom: -0.1%;
+    }
+    .work{
+      font-size: 16px;
+      font-family: "Bellota-Light";
+      // margin-bottom: -0.1%;
+    }
+    .lined{
+      display: flex;
+      flex-direction: column;
+      height: 50%;
+    }
+    .linker{
+      width: 100%;
+      margin-top: 1%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      .link{
+        font-size: 16px;
+        font-family: "Bellota-Light";
+        color: #00aeff;
+        cursor: pointer;
+      }
+    }
+  }
+}
