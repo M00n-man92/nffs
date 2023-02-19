@@ -58,7 +58,7 @@
       display: flex;
       flex-direction: column;
       width: 25%;
-      height: 55%;
+      height: 42%;
 
       background-color: white;
       .handlers {
@@ -71,11 +71,20 @@
         margin-right: 4%;
         margin-top: 5%;
         .textfield {
-          display: flex;
-          align-items: center;
+          // background-color: red;
+          // display: flex;
+          // align-items: center;
           margin-top: 4%;
           // height: 10%;
-          width: 80%;
+          width: 100%;
+          margin-bottom: 3%;
+        }
+        .selcttextfield{
+          display: flex;
+          // align-items: center;
+          // justify-content: center;
+          margin-top: 4%;
+          width: 100%;
           margin-bottom: 3%;
         }
         button{

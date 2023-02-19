@@ -1,9 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
 .individualfirm {
   height: 500vh;
   width: 100%;
   background-color: #f7f8f9;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
+
   // background-color: red;
 
   // background-color: red;
@@ -20,19 +25,22 @@
       filter: brightness(50%);
     }
     .firminforight {
+      width: 50%;
+      align-items: center;
+      display: flex;
       // width: 30%;
       height: 100%;
       position: relative;
-      top: -100%;
-      left: 60%;
+      top: -97%;
+      left: 50%;
       .firmimagecontainer {
         width: 30%;
-        height: 100%;
+        height: 40%;
         display: flex;
       }
       .imageheaders {
         width: 70%;
-        height: 100%;
+        height: 92%;
         display: flex;
         flex-direction: column;
         // background-color: red;
@@ -42,16 +50,19 @@
           // margin-bottom: 5%;
           margin-right: 5%;
           // background-color: red;
-          height: 50%;
+          width: 70%;
+          height: 30%;
           display: flex;
           flex-direction: column;
           border-bottom: 1px solid #dce0e0;
           justify-content: space-around;
           .titlefirm {
+            color: white;
             font-size: 33px;
             font-family: "Bellota-Bold";
           }
           .link {
+            color: white;
             margin-left: 4%;
             font-size: 14px;
             font-family: "Bellota-Light";
@@ -74,17 +85,20 @@
             align-items: center;
             // margin-top: /%;
             .bolder {
+              color: white;
               font-size: 16px;
               font-family: "Bellota-Bold";
             }
             span {
+              color: white;
+
               font-size: 16px;
               font-family: "Bellota-Light";
             }
           }
           .buttons {
             display: flex;
-            width: 50%;
+            width: 70%;
             height: 30%;
             // background-color: red;
             justify-content: space-between;
@@ -93,15 +107,27 @@
               color: white;
               border: none;
               border-radius: 4px;
-              width: 40%;
+              width: 45%;
               &:nth-child(2) {
                 background-color: white;
                 color: #28a745;
                 border: 1px solid #28a745;
                 // border: none;
                 border-radius: 4px;
-                width: 40%;
+                width: 45%;
               }
+            }
+          }
+          .follow {
+            position: relative;
+            top: -120%;
+            left: 60%;
+            button {
+              background-color: #00aeff;
+              color: white;
+              width: 30%;
+              height: 120%;
+              border: none;
             }
           }
         }
@@ -110,15 +136,177 @@
 
     // height: 280%;
   }
+
   .insideindiv {
-    height: 100%;
+    scroll-behavior: smooth;
+    height: 50%;
     // width: 100%;
     margin-left: 8%;
     margin-right: 6%;
     margin-top: 3%;
+    .firmnavigation {
+      display: flex;
+      height: 1%;
+
+      background-color: white;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .firmprojectslists {
+      height: 50%;
+      // width: 100%;
+      margin-top: 2%;
+      overflow-y: hidden;
+      background-color: #f7f8f9;
+      display: flex;
+      justify-content: space-between;
+      .firmlistscontainer {
+        background-color: white;
+        // overflow: scroll;
+        height: 100%;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        .listingbuttons {
+          margin-top: 3%;
+          margin-bottom: 3%;
+          height: 7%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          .productsbutton {
+            background-color: white;
+            color: #00aeff;
+            border: 1px solid #00aeff;
+            width: 33%;
+            height: 100%;
+            border-radius: 4px;
+            &.on {
+              background-color: #00aeff;
+              color: white;
+              // border: 1px solid #00aeff;
+              width: 33%;
+              height: 100%;
+            }
+          }
+          .productsbutton.on {
+            background-color: #00aeff;
+            color: white;
+            // border: 1px solid #00aeff;
+            width: 33%;
+            height: 100%;
+          }
+        }
+        .firmprojectsheadertitle {
+          font-size: 32px;
+          font-family: "Bellota-Bold";
+        }
+        .firmprojectslayout {
+          width: 100%;
+          height: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 220px);
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          grid-row: 10px;
+          justify-content: center;
+          // background-color: red;
+
+          // width: 20%;
+          .individualfirmprojects {
+            background-color: white;
+            // grid-row-end: span 26;
+            display: flex;
+            border-radius: 16px;
+            margin: 10px 15px;
+            // width: 20%;
+            // display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // background-color: white;
+            // flex-grow: 0;
+            box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+            -webkit-box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+            -moz-box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+
+            &:nth-child(odd) {
+              grid-row-end: span 25%;
+            }
+            &:nth-child(even) {
+              grid-row-end: span 30%;
+            }
+            &:hover{
+              .firmindivinfo {
+                border-top: 33px solid red;
+                border-left: 120px solid transparent;
+                height: 18%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                animation: square 4s ease-in 1s infinite alternate none running;
+              }  
+              @keyframes square {
+                0%{ border-top: 13px solid white;
+                  border-left:60px solid transparent; }
+                25%{ border-top: 19px solid white;
+                  border-left: 80px solid transparent;}
+                50%{ border-top: 24px solid white;
+                  border-left: 120px solid transparent; }
+                75%{ border-top: 29px solid white;
+                  border-left: 100px solid transparent; }
+                100%{ border-top: 33px solid white;
+                  border-left: 120px solid transparent; }
+              }
+            }
+            .imageanimation {
+              height: 80%;
+              width: 100%;
+              // border-right: 1px solid transparent;
+              //   border-bottom: 3px solid blue;
+              // background-color: red;
+              img {
+                height: 100%;
+                width: 100%;
+                // border-right: 20px solid transparent;
+                // border-bottom: 30px solid blue;
+                object-fit: cover;
+                &:hover {
+                  filter: brightness(50%);
+                }
+              }
+            }
+            .firmindivinfo {
+              border-top: 33px solid red;
+              border-left: 120px solid transparent;
+              height: 18%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              // animation: square 4s ease-in 1s infinite alternate none running;
+
+              span {
+                font-size: 16px;
+                font-family: "Bellota-Light";
+              }
+              // background-color: red;
+            }
+          }
+        }
+      }
+      .firmprojecstsisde {
+        width: 28%;
+        height: 60%;
+        background-color: red;
+      }
+    }
     .firmmiddle {
       margin-top: 3%;
-      height: 22%;
+      height: 42%;
       width: 100%;
       display: flex;
       // background-color: red;
@@ -184,25 +372,65 @@
         }
       }
     }
-    .firmbottom {
+    .firmprojectbottom {
       margin-top: 4%;
       display: flex;
       // flex-wrap: wrap;
       flex-direction: column;
-      height: 60%;
+      height: 20%;
       width: 100%;
+      // overflow: visible;
+
       background-color: white;
       .projectstitle {
         font-size: 33px;
         font-family: "Bellota-Bold";
       }
-      .firmprojects {
-        margin-top: 5%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+      .firmprojectscontainer {
         width: 100%;
-        height: 100%;
+        height: 10000vh;
+        overflow: scroll;
+        //   display: grid;
+        //   justify-content: center;
+        //   grid-template-columns: repeat(auto-fill, 320px);
+        //   position: relative;
+        //   left: 50%;
+        //   transform: translateX(-50%);
+        //   grid-row: 10px;
+        //   overflow-y: visible;
+        background-color: blue;
+        // .singleprojectcointer{
+        //   background-color: white;
+        // grid-row-end: span 26;
+        // display: flex;
+        // border-radius: 16px;
+        // margin: 10px 15px;
+
+        // // width: 20%;
+        // // display: flex;
+        // flex-direction: column;
+        // // justify-content: center;
+        // // background-color: white;
+        // // flex-grow: 0;
+        // box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+        // -webkit-box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+        // -moz-box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+        // &:nth-child(odd){
+        //   grid-row-end: span 106;
+        // }
+        // &:nth-child(even){
+        //   grid-row-end: span 66;
+        // }
+        //   // .topblogimage {
+        //   //   height: 60%;
+        //   //   // background-color: red;
+        //   // }
+        //   // .bottom {
+        //   //   height: 40%;}
+        //   // // background-color: oldlace;
+        //   // // flex-grow: 1;
+
+        // }
       }
     }
   }

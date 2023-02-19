@@ -55,6 +55,7 @@ export default function Firms() {
                   label="Firm"
                   // onChange={(e) => setAccount(e.target.value)}
                   required
+                  // width="100px"
                 >
                   <MenuItem value="General Contractors">General Contractors</MenuItem>
                   <MenuItem value="Finishing">Finishing</MenuItem>
@@ -66,15 +67,15 @@ export default function Firms() {
             </div>
             <span className='searchheader'>Catagories</span>
             <div className='firmcatagories'>
-                <ColoredBox span={"Architecture / Design Firm"}  width={"140px"} margin={ "10px 15px"} height={"40px"} />
-                <ColoredBox span={"Engineering"}  width={"90px"} margin={ "10px 15px"} />
-                <ColoredBox span={"Finishing"}  width={"90px"} margin={ "10px 15px"} />
-                <ColoredBox span={"General Contractors"}  width={"140px"} margin={ "10px 5px"} height={"40px"} />
-                <ColoredBox span={"Graphics & Animation"}  width={"140px"} margin={ "10px 15px"} height={"40px"} />
-                <ColoredBox span={"Landscape Architecture"}  width={"140px"} margin={ "10px 15px"} height={"40px"} />
-                <ColoredBox span={"Photography Studio"}  width={"140px"} margin={ "10px 15px"} height={"40px"} />
-                <ColoredBox span={"Plannig"}  width={"90px"} margin={ "10px 15px"} />
-                <ColoredBox span={"Security"}  width={"90px"} margin={ "10px 15px"} />
+                <ColoredBox span={"Architecture / Design Firm"}  width={"140px"} margin={ "10px 7px"}  />
+                <ColoredBox span={"Engineering"}  width={"90px"} margin={ "10px 7px"} />
+                <ColoredBox span={"Finishing"}  width={"90px"} margin={ "10px 7px"} />
+                <ColoredBox span={"General Contractors"}  width={"140px"} margin={ "10px 5px"}  />
+                <ColoredBox span={"Graphics & Animation"}  width={"140px"} margin={ "10px 7px"}  />
+                <ColoredBox span={"Landscape Architecture"}  width={"140px"} margin={ "10px 7px"}  />
+                <ColoredBox span={"Photography Studio"}  width={"140px"} margin={ "10px 7px"}  />
+                <ColoredBox span={"Plannig"}  width={"90px"} margin={ "10px 7px"} />
+                <ColoredBox span={"Security"}  width={"90px"} margin={ "10px 7px"} />
             </div>
           </div>
         </div>

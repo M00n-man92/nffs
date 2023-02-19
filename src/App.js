@@ -29,6 +29,8 @@ function App() {
         <Route path="/blogs" element={<Blog />} />
         <Route path="/firms" element={<Firms />} />
         <Route path="/firm/:firmnameorid" element={<Firm />} />
+        <Route path="/project/:projectnameorid" element={<Property />} />
+
       </Routes>
 
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 // Icon class
 import Rooms from "../../../../example/rooms"
 // image container
@@ -8,15 +9,17 @@ import Pictured from "../../../../example/item/pictured"
 // csss class
 import "../../../../styles/pages/firms/firm/indivfirm.scss"
 // mui 
-import { LocationOn } from '@mui/icons-material'
+import { Grade, Info, LocationOn, ReportProblem, Share } from '@mui/icons-material'
 import Border from '../../../../example/borderbottom'
 import { useLocation } from 'react-router'
 
 import { firmdata } from "../data/firms.js"
+import HeaderNavLink from '../../../../example/headerNavLinks'
 export default function Firm() {
   const location = useLocation()
   const [firm, setFirm] = useState({});
   const id = location.pathname.split("/")[2]
+
   // console.log(id)
   useEffect(() => {
     const somethings = () => {
@@ -29,6 +32,10 @@ export default function Firm() {
     somethings();
   }, [])
 
+  // changes the catagories from roduct, projects ot materials
+  const pagechanger = [{ name: "Project", value: 0 }, { name: "Product", value: 1 }, { name: "Material", value: 2 }]
+  const [projectChanger, setProjectChanger] = useState("Project");
+
   // console.log(firm);
   const style = {
     width: "30%",
@@ -40,7 +47,7 @@ export default function Firm() {
   return (
     <div className='individualfirm'>
       <div className='firmheader'>
-        <img src={firm.img} />
+        <img src={firm.img} alt="" />
         <div className='firminforight'>
           <div className='firmimagecontainer'>
             <ImageBox src={firm.img} />
@@ -48,8 +55,8 @@ export default function Firm() {
           <div className='imageheaders'>
             <div className='insideheaders'>
               <span className='titlefirm'>{firm.name}</span>
-              <span className='link'>See all reviews</span>
-              <Rooms icons={<LocationOn style={{ fontSize: "12px" }} />} number={"1611 Michigan Ave, Miami Beach, FL 33139"} />
+              <span className='link'>firm type General Contractors</span>
+              {/* <Rooms icons={<LocationOn style={{ fontSize: "12px" }} />} number={"1611 Michigan Ave, Miami Beach, FL 33139"} /> */}
             </div>
             <div className='lowerdetails'>
               <div className='llicence'>
@@ -69,15 +76,157 @@ export default function Firm() {
                 </button>
 
               </div>
+              <div className='follow'>
+                <button >
+                  Follow
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
+
+
       <div className='insideindiv'>
+        <div className='firmnavigation'>
+          <HeaderNavLink text={"About us"} idlink={"about"} icon={<Info style={{ color: "#999999", fontSize: "16px" }} />} />
+          <HeaderNavLink text={"Rating"} idlink={"rating"} icon={<Grade style={{ color: "#999999", fontSize: "16px" }} />} />
+          <HeaderNavLink text={"Products"} idlink={"products"} icon={<Info style={{ color: "#999999", fontSize: "16px" }} />} />
+          <HeaderNavLink text={"Projects"} idlink={"projects"} icon={<Info style={{ color: "#999999", fontSize: "16px" }} />} />
+          <HeaderNavLink text={"Share"} idlink={"share"} icon={<Share style={{ color: "#999999", fontSize: "16px" }} />} />
+          <HeaderNavLink text={"Report"} idlink={"report"} icon={<ReportProblem style={{ color: "#999999", fontSize: "16px" }} />} />
+
+        </div>
+
+
+        <div className='firmprojectslists' id='projects'>
+
+          <div className='firmlistscontainer'>
+            <div className='listingbuttons'>
+              {pagechanger.map((item, index) => (
+                <button key={index + 23} className={projectChanger === item.name ? 'productsbutton on' : "productsbutton"} value={0} onClick={((e) => { setProjectChanger(item.name) })}>{item.name} (5)</button>
+              ))}
+            </div>
+            <span className='firmprojectsheadertitle'>{projectChanger}</span>
+            <div className='firmprojectslayout'>
+              
+                {/* <div className='individualfirmprojects'>
+                <Link to="/project/:projectnameorid" className='link'>
+                  <div className='imageanimation'>
+                    <img alt='' src={firm.img} />
+                    <div className='traingle'></div>
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                  </Link>
+                </div> */}
+              
+
+              <Link to="/project/:projectnameorid" className='link'></Link>
+              {/* <div className='individualfirmprojects'>
+                <div className='imageanimation'>
+                  <img src={firm.img} alt="" />
+                  <div className='traingle'></div>
+                </div>
+
+                <div className='firmindivinfo'>
+                  <span>name</span>
+                  <span>details</span>
+                </div>
+              </div> */}
+              
+              <Link to="/project/:projectnameorid" className='link'>
+                <div className='individualfirmprojects'>
+                  <div className='imageanimation'>
+                    <img src={firm.img} alt="" />
+
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                </div>
+              </Link><Link to="/project/:projectnameorid" className='link'>
+                <div className='individualfirmprojects'>
+                  <div className='imageanimation'>
+                    <img src={firm.img} alt="" />
+
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                </div>
+              </Link><Link to="/project/:projectnameorid" className='link'>
+                <div className='individualfirmprojects'>
+                  <div className='imageanimation'>
+                    <img src={firm.img} alt="" />
+
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                </div>
+              </Link><Link to="/project/:projectnameorid" className='link'>
+                <div className='individualfirmprojects'>
+                  <div className='imageanimation'>
+                    <img src={firm.img} alt="" />
+
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                </div>
+              </Link>
+
+              
+                <div className='individualfirmprojects'>
+                  <div className='imageanimation'>
+                    <img src={firm.img} alt="" />
+
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                </div>
+           
+
+              <Link to="/project/:projectnameorid" className='link'>
+                <div className='individualfirmprojects'>
+                  <div className='imageanimation'>
+                    <img src={firm.img} alt="" />
+
+                  </div>
+
+                  <div className='firmindivinfo'>
+                    <span>name</span>
+                    <span>details</span>
+                  </div>
+                </div>
+              </Link>
+
+            </div>
+          </div>
+          <div className='firmprojecstsisde'>
+
+          </div>
+        </div>
+
 
         <div className='firmmiddle'>
-          <div className='aboutfirm'>
+          <div className='aboutfirm' id='about'>
             <div className='infocontainer'>
               <span className='infotilte'> About {firm.name}</span>
               <p>Nulla sed ligula tincidunt, posuere tellus quis, cursus risus. Duis sed luctus elit, at faucibus enim. Vestibulum libero mi, rhoncus et sodales eu, hendrerit non eros. Mauris laoreet, ante id fermentum volutpat, elit mauris sollicitudin orci, vel imperdiet turpis lacus sit amet ipsum. Vestibulum ultrices, ex at congue vehicula, ipsum orci bibendum nunc, at vestibulum nisl justo sit amet orci. Aenean vitae congue magna. Duis dapibus tincidunt felis, in hendrerit lorem cursus sit amet. Quisque dapibus, lorem a vestibulum scelerisque, ligula nisl placerat turpis, eu venenatis sapien dolor in quam. Ut eu tortor sollicitudin leo sodales pharetra. Nulla eget posuere arcu.</p>
@@ -102,18 +251,7 @@ export default function Firm() {
           </div>
 
         </div>
-        <div className='firmbottom'>
-          <span className='projectstitle'>Projects</span>
-          <div className='firmprojects'>
-            <Pictured style={style} />
-            <Pictured style={style} />
-            <Pictured style={style} />
-            <Pictured style={style} />
-          </div>
 
-
-
-        </div>
       </div>
     </div>
   )

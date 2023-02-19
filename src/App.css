@@ -34,3 +34,7 @@
   src: local("Risque-Regular"),
   url("./assets/fonts/Risque-Regular.ttf");
 }
+.App{
+  /* overflow-y: scroll; */
+  scroll-behavior: smooth;
+}
