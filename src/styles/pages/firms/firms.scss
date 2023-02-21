@@ -1,6 +1,6 @@
 .firms {
   width: 100%;
-  height: 200vh;
+  // height: 200vh;
   background-color: #f7f8f9;
   .insidefirms {
     margin-left: 8%;
@@ -36,20 +36,43 @@
       width: 70%;
       height: 100%;
       .singelfirmcontainer {
-        display: flex;
-        flex-direction: column;
-        margin-left: 3%;
-        margin-right: 6%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 240px);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        grid-row: 10px;
+
+        // display: flex;
+        // // flex-direction: column;
+        // flex-wrap: wrap;
+        // margin-left: 3%;
+        // margin-right: 6%;
         // margin-top: 1%;
-        height: 100%;
+        // height: 660px;
         // background-color: red;
         .singualrfirm {
-          display: flex;
-          // justify-content: space-between;
-          height: 40%;
+          background-color: white;
+        grid-row-end: span 26;
+        display: flex;
+        border-radius: 16px;
+        margin: 10px 10px;
+        // width: 20%;
+        // display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // background-color: white;
+        // flex-grow: 0;
+        box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 0px 13px 5px 0px rgba(0, 0, 0, 0.22);
+          // display: flex;
+          // // justify-content: space-between;
+          // height: 260px;
           // background-color: red;
-          width: 100%;
-          margin-bottom: 1%;
+          // width: 32%;
+          // margin-bottom: 1%;
+          // margin-left: 1%;
           // display: none;
         }
       }
@@ -79,7 +102,7 @@
           width: 100%;
           margin-bottom: 3%;
         }
-        .selcttextfield{
+        .selcttextfield {
           display: flex;
           // align-items: center;
           // justify-content: center;
@@ -87,7 +110,7 @@
           width: 100%;
           margin-bottom: 3%;
         }
-        button{
+        button {
           background-color: #00aeff;
           color: white;
           border: none;
@@ -101,7 +124,7 @@
         font-size: 23px;
         font-family: "Bellota-Bold";
       }
-      .firmcatagories{
+      .firmcatagories {
         display: flex;
         flex-wrap: wrap;
       }

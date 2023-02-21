@@ -9,12 +9,17 @@ export default function SingleFirm({ title, type, image }) {
   return (
     <div className="individualfirming">
       <div className='imagecontanier'>
-        <ImageBox src={image} />
+        <img src={image} alt="" />
+        <div className='darkerart'>
+          <span className='firmholdertitle'>{title}</span>
+          <span className='work'>{type}</span>
+        </div>
+
       </div>
 
       <div className='imageinfocontainer'>
-        <span className='firmholdertitle'>{title}</span>
-        <span className='work'>{type}</span>
+        {/* <span className='firmholdertitle'>{title}</span>
+        <span className='work'>{type}</span> */}
         <div className='lined'>
           <Border first={"Office"} second={"0983078383"} />
           <Border first={"Cell"} second={"0983078383"} />
@@ -23,9 +28,9 @@ export default function SingleFirm({ title, type, image }) {
         </div>
         <div className="linker">
           <Link to={`/firm/${title}`} className="link">
-          <span className='link'>
-            View Projects
-          </span>
+            <span className='link'>
+              View Projects
+            </span>
           </Link>
         </div>
       </div>

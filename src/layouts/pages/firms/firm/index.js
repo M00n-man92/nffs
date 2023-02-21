@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // Icon class
 import Rooms from "../../../../example/rooms"
 // image container
@@ -9,18 +9,30 @@ import Pictured from "../../../../example/item/pictured"
 // csss class
 import "../../../../styles/pages/firms/firm/indivfirm.scss"
 // mui 
-import { Grade, Info, LocationOn, ReportProblem, Share } from '@mui/icons-material'
+import { FacebookOutlined, Grade, Instagram, Google, Info, LinkedIn, LocationOn, Pinterest, ReportProblem, Share, Star, StarBorderOutlined, StarOutlineSharp, Twitter, YouTube } from '@mui/icons-material'
 import Border from '../../../../example/borderbottom'
 import { useLocation } from 'react-router'
 
 import { firmdata } from "../data/firms.js"
 import HeaderNavLink from '../../../../example/headerNavLinks'
+import { TextField } from '@mui/material'
 export default function Firm() {
   const location = useLocation()
   const [firm, setFirm] = useState({});
-  const id = location.pathname.split("/")[2]
 
-  // console.log(id)
+  /// just a list im gong to use as a for looop
+  const loop = [0, 1, 2, 3, 4];
+  const people = 95800
+  let peopleholder;
+  if (people.toString().split("").length > 5) {
+    peopleholder = people.toString().split("")[0] + people.toString().split("")[1] + people.toString().split("")[2] + "k";
+  }
+  else if (people.toString().split("").length > 4) {
+    peopleholder = people.toString().split("")[0] + people.toString().split("")[1] + "k";
+  }
+  console.log()
+  // function that runs when the page is loaded to get the username or Id of the firm from the url
+  const id = location.pathname.split("/")[2]
   useEffect(() => {
     const somethings = () => {
       firmdata.map((item) => {
@@ -32,6 +44,9 @@ export default function Firm() {
     somethings();
   }, [])
 
+  // vars and functions to use for the stars 
+  const [isPressed, setIsPressed] = useState(0)
+  // Todo A function here to add the review from the user to the firm and save it
   // changes the catagories from roduct, projects ot materials
   const pagechanger = [{ name: "Project", value: 0 }, { name: "Product", value: 1 }, { name: "Material", value: 2 }]
   const [projectChanger, setProjectChanger] = useState("Project");
@@ -76,11 +91,11 @@ export default function Firm() {
                 </button>
 
               </div>
-              <div className='follow'>
+              {/* <div className='follow'>
                 <button >
                   Follow
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -90,6 +105,7 @@ export default function Firm() {
 
       <div className='insideindiv'>
         <div className='firmnavigation'>
+
           <HeaderNavLink text={"About us"} idlink={"about"} icon={<Info style={{ color: "#999999", fontSize: "16px" }} />} />
           <HeaderNavLink text={"Rating"} idlink={"rating"} icon={<Grade style={{ color: "#999999", fontSize: "16px" }} />} />
           <HeaderNavLink text={"Products"} idlink={"products"} icon={<Info style={{ color: "#999999", fontSize: "16px" }} />} />
@@ -110,117 +126,56 @@ export default function Firm() {
             </div>
             <span className='firmprojectsheadertitle'>{projectChanger}</span>
             <div className='firmprojectslayout'>
-              
-                {/* <div className='individualfirmprojects'>
+              {loop.map(() => (
                 <Link to="/project/:projectnameorid" className='link'>
-                  <div className='imageanimation'>
-                    <img alt='' src={firm.img} />
-                    <div className='traingle'></div>
+                  <div className='individualfirmprojects'>
+                    <div className='imageanimation'>
+                      <img src={firm.img} alt="" />
+
+                    </div>
+
+                    <div className='firmindivinfo'>
+                      <span>name</span>
+                      <span>details</span>
+                    </div>
                   </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                  </Link>
-                </div> */}
-              
-
-              <Link to="/project/:projectnameorid" className='link'></Link>
-              {/* <div className='individualfirmprojects'>
-                <div className='imageanimation'>
-                  <img src={firm.img} alt="" />
-                  <div className='traingle'></div>
-                </div>
-
-                <div className='firmindivinfo'>
-                  <span>name</span>
-                  <span>details</span>
-                </div>
-              </div> */}
-              
-              <Link to="/project/:projectnameorid" className='link'>
-                <div className='individualfirmprojects'>
-                  <div className='imageanimation'>
-                    <img src={firm.img} alt="" />
-
-                  </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                </div>
-              </Link><Link to="/project/:projectnameorid" className='link'>
-                <div className='individualfirmprojects'>
-                  <div className='imageanimation'>
-                    <img src={firm.img} alt="" />
-
-                  </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                </div>
-              </Link><Link to="/project/:projectnameorid" className='link'>
-                <div className='individualfirmprojects'>
-                  <div className='imageanimation'>
-                    <img src={firm.img} alt="" />
-
-                  </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                </div>
-              </Link><Link to="/project/:projectnameorid" className='link'>
-                <div className='individualfirmprojects'>
-                  <div className='imageanimation'>
-                    <img src={firm.img} alt="" />
-
-                  </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                </div>
-              </Link>
-
-              
-                <div className='individualfirmprojects'>
-                  <div className='imageanimation'>
-                    <img src={firm.img} alt="" />
-
-                  </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                </div>
-           
-
-              <Link to="/project/:projectnameorid" className='link'>
-                <div className='individualfirmprojects'>
-                  <div className='imageanimation'>
-                    <img src={firm.img} alt="" />
-
-                  </div>
-
-                  <div className='firmindivinfo'>
-                    <span>name</span>
-                    <span>details</span>
-                  </div>
-                </div>
-              </Link>
-
+                </Link>))}
             </div>
           </div>
           <div className='firmprojecstsisde'>
+            <div className='firmratingstars'>
+              <div className='firmcircularpic'>
+                <img className='circularimage' src={firm.img} alt="" />
+              </div>
+              <div className='ratingstars'>
+                {/* Todo  server should compute if the user has a new vote or is updating an older vote 
+                    and for the firm sake the comupted votes should be 4 untill the voters reach atleast a 100
+                */}
+                {isPressed >= 1 ? <Star className="star pressed" onClick={(e) => { setIsPressed(1) }} /> : <StarOutlineSharp className='star' onClick={(e) => { setIsPressed(1) }} />}
+                {isPressed >= 2 ? <Star className="star pressed" onClick={(e) => { setIsPressed(2) }} /> : <StarOutlineSharp className='star' onClick={(e) => { setIsPressed(2) }} />}
+                {isPressed >= 3 ? <Star className="star pressed" onClick={(e) => { setIsPressed(3) }} /> : <StarOutlineSharp className='star' onClick={(e) => { setIsPressed(3) }} />}
+                {isPressed >= 4 ? <Star className="star pressed" onClick={(e) => { setIsPressed(4) }} /> : <StarOutlineSharp className='star' onClick={(e) => { setIsPressed(4) }} />}
+                {isPressed >= 5 ? <Star className="star pressed" onClick={(e) => { setIsPressed(5) }} /> : <StarOutlineSharp className='star' onClick={(e) => { setIsPressed(5) }} />}
+                <span className='ratingspan'>{people > 999 ? peopleholder : people}</span>
+              </div>
 
+            </div>
+            <div className='followingsection'>
+              <span className='firmtitle'>{firm.name}</span>
+              {/* Todo it should be known as the user logs in that whether he/she follows the firm maybe on serverside or */}
+
+              {false ? <button className='followfirm'>Follow</button> : <div className='useralreadyfollows'>
+                <button className='followingfirm'>Following</button>
+                <button className='unfollowfirm'>UnFollow</button>
+              </div>}
+            </div>
+            <div className='listofdetails'>
+              <Border first={"Projects"} second={"73"} />
+              <Border first={"Products"} second={"2"} />
+              <Border first={"Materials"} second={"23"} />
+              <Border first={"Followers"} second={"1M"} />
+              <Border first={"Following"} second={"45"} />
+            </div>
           </div>
         </div>
 
@@ -247,12 +202,55 @@ export default function Firm() {
                 <Border first={"Email"} second={"kalabtezera@gmail.com"} />
                 <Border first={"Website"} second={"https://niddf.com/"} />
               </div>
+              <div className='findonsocials'>
+                <span className='firmsocialstitlte'>you can find {firm.name} on</span>
+                <div className='firmsocialhandles'>
+                  <FacebookOutlined className='facebook'/>
+                  <Instagram className='insta'/>
+                  <Twitter className='twitter'/>
+                  <LinkedIn className='linkedin'/>
+                  <Google className='googs'/>
+                  <YouTube className='yt'/>
+                  <Pinterest className='pindabest'/>
+                  
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
+        <div className='firmreport'>
+          <div className='leftsidereport'>
+            <div className='emailer'>
+              <span>Send a message to {firm.name}</span>
+              <div className='messagesendingfields'>
+                <div className='singlefield'>
+                  <span>your Email</span>
+                  <TextField variant="standard" />
 
-      </div>
-    </div>
+
+                </div>
+                <div className='singlefield'>
+                  <span>Subject</span>
+                  <TextField variant="standard" />
+
+
+                </div>
+                <div className='singlefield'>
+                  <span>Message</span>
+                  <TextField
+                    multiline
+                    rows={4} />
+
+                </div>
+                <button className='emailerbutton'> Send Message</button>
+              </div>
+            </div>
+          </div>
+          <div className='rightsidereport'></div>
+        </div>
+
+      </div >
+    </div >
   )
 }

@@ -146,7 +146,7 @@ html {
     margin-top: 3%;
     .firmnavigation {
       display: flex;
-      height: 1%;
+      height: 2%;
 
       background-color: white;
       align-items: center;
@@ -200,7 +200,7 @@ html {
           }
         }
         .firmprojectsheadertitle {
-          font-size: 32px;
+          font-size: 16px;
           font-family: "Bellota-Bold";
         }
         .firmprojectslayout {
@@ -217,6 +217,9 @@ html {
 
           // width: 20%;
           .individualfirmprojects {
+            span {
+              color: black;
+            }
             background-color: white;
             // grid-row-end: span 26;
             display: flex;
@@ -238,41 +241,38 @@ html {
             &:nth-child(even) {
               grid-row-end: span 30%;
             }
-            &:hover{
-              .firmindivinfo {
-                border-top: 33px solid red;
-                border-left: 120px solid transparent;
-                height: 18%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                animation: square 4s ease-in 1s infinite alternate none running;
-              }  
-              @keyframes square {
-                0%{ border-top: 13px solid white;
-                  border-left:60px solid transparent; }
-                25%{ border-top: 19px solid white;
-                  border-left: 80px solid transparent;}
-                50%{ border-top: 24px solid white;
-                  border-left: 120px solid transparent; }
-                75%{ border-top: 29px solid white;
-                  border-left: 100px solid transparent; }
-                100%{ border-top: 33px solid white;
-                  border-left: 120px solid transparent; }
-              }
-            }
+            // &:hover{
+            //   .firmindivinfo {
+            //     border-top: 33px solid red;
+            //     border-left: 120px solid transparent;
+            //     height: 18%;
+            //     display: flex;
+            //     flex-direction: column;
+            //     align-items: center;
+            //     justify-content: center;
+            //     animation: square 4s ease-in 1s infinite alternate none running;
+            //   }
+            //   @keyframes square {
+            //     0%{ border-top: 13px solid white;
+            //       border-left:60px solid transparent; }
+            //     25%{ border-top: 19px solid white;
+            //       border-left: 80px solid transparent;}
+            //     50%{ border-top: 24px solid white;
+            //       border-left: 120px solid transparent; }
+            //     75%{ border-top: 29px solid white;
+            //       border-left: 100px solid transparent; }
+            //     100%{ border-top: 33px solid white;
+            //       border-left: 120px solid transparent; }
+            //   }
+            // }
             .imageanimation {
               height: 80%;
               width: 100%;
-              // border-right: 1px solid transparent;
-              //   border-bottom: 3px solid blue;
-              // background-color: red;
+
               img {
                 height: 100%;
                 width: 100%;
-                // border-right: 20px solid transparent;
-                // border-bottom: 30px solid blue;
+
                 object-fit: cover;
                 &:hover {
                   filter: brightness(50%);
@@ -280,8 +280,6 @@ html {
               }
             }
             .firmindivinfo {
-              border-top: 33px solid red;
-              border-left: 120px solid transparent;
               height: 18%;
               display: flex;
               flex-direction: column;
@@ -299,9 +297,108 @@ html {
         }
       }
       .firmprojecstsisde {
+        background-color: white;
         width: 28%;
         height: 60%;
-        background-color: red;
+        display: flex;
+        flex-direction: column;
+
+        .firmratingstars {
+          // background-color: red;
+          margin-left: 3%;
+          margin-top: 3%;
+          margin-right: 3%;
+          display: flex;
+          align-items: center;
+          height: 20%;
+          .firmcircularpic {
+            height: 60%;
+            border-radius: 50%;
+            background-color: #f7f8f9;
+            // background-color: red;
+            width: 30%;
+            .circularimage {
+              border-radius: 50%;
+              object-fit: contain;
+              height: 100%;
+              width: 100%;
+            }
+          }
+          .ratingstars {
+            display: flex;
+            align-items: center;
+
+            .star {
+              color: goldenrod;
+              background-color: white;
+              font-size: 17px;
+              // border: 1px solid red;
+              &.pressed {
+                color: goldenrod;
+                // color: white;
+                // border: 1px solid red;
+                // background-color: goldenrod;
+              }
+            }
+            .ratingspan {
+              margin-left: 4px;
+              font-size: 12px;
+              color: goldenrod;
+              font-family: "Bellota-Bold";
+            }
+          }
+        }
+        .followingsection {
+          display: flex;
+          align-items: center;
+          margin-left: 3%;
+          margin-top: 3%;
+          margin-right: 3%;
+          justify-content: space-around;
+          .firmtitle {
+            font-size: 18px;
+            // color: goldenrod;
+            font-family: "Bellota-Bold";
+          }
+          .followfirm {
+            width: 25%;
+            height: 100%;
+            background-color: #00aeff;
+            color: white;
+            border: none;
+          }
+          .useralreadyfollows {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .followingfirm {
+              background-color: #dce0e0;
+              width: 48%;
+              height: 100%;
+              border: none;
+            }
+            .unfollowfirm {
+              background-color: crimson;
+              color: white;
+              width: 48%;
+              height: 100%;
+              border: none;
+            }
+          }
+        }
+        .listofdetails {
+          margin-right: 3%;
+          margin-left: 3%;
+          margin-top: 3%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          // width: 100%;
+          height: 60%;
+          // background-color: red;
+        }
+
+        // background-color: red;
       }
     }
     .firmmiddle {
@@ -337,7 +434,7 @@ html {
         }
       }
       .contactfirm {
-        height: 60%;
+        height: 90%;
         width: 28%;
         background-color: white;
         .containing {
@@ -369,6 +466,57 @@ html {
             width: 100%;
             height: 30%;
           }
+          .findonsocials {
+            height: 15%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            .firmsocialstitlte {
+              font-size: 16px;
+              font-family: "Bellota-Regular";
+            }
+            .firmsocialhandles{
+              display: flex;
+              width: 100%;
+              justify-content: space-around;
+              .facebook{
+                color:#87CFFF;
+                font-size: 22px;
+                cursor: pointer;
+              }
+              .insta{
+                color:#87CFFF;
+                font-size: 22px;
+                cursor: pointer;
+              }
+              .yt{
+                color:#D02737;
+                font-size: 22px;
+                cursor: pointer;
+              }
+              .pindabest{
+                color:#D62027;
+                font-size: 22px;
+                cursor: pointer;
+              }
+              .googs{
+                color:#5FB3FF;
+                font-size: 22px;
+                cursor: pointer;
+              }
+              .linkedin{
+                color:#677BC5;
+                font-size: 22px;
+              }
+              .twitter{
+                color:#47C5F4;
+                font-size: 22px;
+                cursor: pointer;
+              }
+            }
+          }
         }
       }
     }
@@ -398,7 +546,7 @@ html {
         //   transform: translateX(-50%);
         //   grid-row: 10px;
         //   overflow-y: visible;
-        background-color: blue;
+        // background-color: blue;
         // .singleprojectcointer{
         //   background-color: white;
         // grid-row-end: span 26;
@@ -431,6 +579,63 @@ html {
         //   // // flex-grow: 1;
 
         // }
+      }
+    }
+    .firmreport {
+      margin-top: 3%;
+      height: 22%;
+      width: 100%;
+      display: flex;
+      // background-color: red;
+      justify-content: space-between;
+      .leftsidereport {
+        background-color: white;
+
+        width: 70%;
+        height: 100%;
+        .emailer {
+          margin-left: 6%;
+          // margin-top: 4%;
+          margin-right: 5%;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          span {
+            font-size: 16px;
+            font-family: "Bellota-Bold";
+          }
+          .messagesendingfields {
+            // margin-top: 2%;
+            margin-left: 4%;
+            display: flex;
+            flex-direction: column;
+            width: 55%;
+            height: 100%;
+            // background-color: red;
+            // align-items: center;
+            justify-content: space-around;
+            align-items: flex-end;
+            .singlefield {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              span {
+                font-size: 16px;
+                font-family: "Bellota-Light";
+              }
+            }
+            .emailerbutton {
+              background-color: #00aeff;
+              color: white;
+              border: none;
+              height: 10%;
+              width: 40%;
+              border-radius: 4px;
+              // align-items: flex-end;
+            }
+          }
+        }
       }
     }
   }

@@ -1,51 +1,97 @@
-.individualfirming{
+.individualfirming {
   width: 100%;
   height: 100%;
   display: flex;
-  // background-color: red;
+  flex-direction: column;
   justify-content: space-between;
   // background-color: white;
+  .imagecontanier:hover{
 
-  .imagecontanier{
-    width: 48%;
-    height: 100%;
-
+    background-color: transparent;
+      background: none;
   }
-  .imageinfocontainer{
+  .imagecontanier {
+    cursor: pointer;
+    // display: flex;
+    // flex-direction: column;
+    width: 100%;
+    height: 58%;
+    // background-color: red;
+    &:hover{
+      .darkerart{
+        background-color: transparent;
+        background: none;
+      }
+     
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .darkerart {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      height: 30%;
+      // background-color: red;
+      background-color: rgba(13, 15, 10, 0.404);
+      top: -30%;
+      background: linear-gradient(to top, rgba(13, 15, 10, 0.404) 70%, transparent 95%);
+
+      .firmholdertitle {
+        // color: white;
+        font-size: 16px;
+        font-family: "Bellota-Bold";
+        color: white;
+        margin-bottom: -0.1%;
+      }
+      .work {
+        color: white;
+
+        font-size: 12px;
+        font-family: "Bellota-Light";
+        // margin-bottom: -0.1%;
+      }
+    }
+  }
+  .imageinfocontainer {
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 48%;
     // background-color: blue;
-    .lined{
+    .lined {
       margin-top: 1%;
       height: 15%;
       width: 100%;
       // background-color: orange;
     }
-    .firmholdertitle{
+    .firmholdertitle {
       // color: white;
       font-size: 23px;
       font-family: "Bellota-Bold";
       margin-bottom: -0.1%;
     }
-    .work{
+    .work {
       font-size: 16px;
       font-family: "Bellota-Light";
       // margin-bottom: -0.1%;
     }
-    .lined{
+    .lined {
       display: flex;
       flex-direction: column;
-      height: 50%;
+      height: 80%;
     }
-    .linker{
+    .linker {
       width: 100%;
       margin-top: 1%;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
-      .link{
+      .link {
         font-size: 16px;
         font-family: "Bellota-Light";
         color: #00aeff;
