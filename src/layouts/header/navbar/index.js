@@ -73,7 +73,7 @@ export default function NavBar() {
             </div>
           </Link>
           {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/blogs">
+          <Link className='link' to="/products">
             <div className='containers'>
 
               <span> PRODUCT</span>

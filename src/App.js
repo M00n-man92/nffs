@@ -13,6 +13,7 @@ import Blog from "./layouts/pages/blog/item";
 import SingleBlog from "./layouts/pages/blog";
 import Firms from "./layouts/pages/firms";
 import Firm from "./layouts/pages/firms/firm"
+import Products from "./layouts/pages/products";
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
@@ -30,6 +31,7 @@ function App() {
         <Route path="/firms" element={<Firms />} />
         <Route path="/firm/:firmnameorid" element={<Firm />} />
         <Route path="/project/:projectnameorid" element={<Property />} />
+        <Route path="/products" element={<Products />} />
 
       </Routes>
 
