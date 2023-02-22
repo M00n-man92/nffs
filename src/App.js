@@ -15,6 +15,8 @@ import Firms from "./layouts/pages/firms";
 import Firm from "./layouts/pages/firms/firm"
 import Products from "./layouts/pages/products";
 import Projects from "./layouts/pages/projects";
+import Manufacturers from "./layouts/pages/manufacturer";
+import ManufacturerPage from "./layouts/pages/manufacturer/singelpage"
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
@@ -34,6 +36,8 @@ function App() {
         <Route path="/project/:projectnameorid" element={<Property />} />
         <Route path="/products" element={<Products />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/manufacturers" element={<Manufacturers />} />
+        <Route path="/manufacturer/:nameorid" element={<ManufacturerPage />} />
 
       </Routes>
 

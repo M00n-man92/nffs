@@ -113,7 +113,7 @@ export default function NavBar() {
 
             </div>
           </Link>
-          <Link className='link' to="/blogs">
+          <Link className='link' to="/manufacturers">
             <div className='containers'>
 
               <span> MANUFACTURER </span>
