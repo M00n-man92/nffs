@@ -4,7 +4,7 @@ import ImageBox from "../imagebox"
 import Rooms from "../rooms"
 import { AttachFile, NavigateNext } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
-export default function PinterstLayout({cards,linker}) {
+export default function PinterstLayout({ cards, linker, blog, project }) {
   const [pageNumber, setPageNumber] = useState(1);
   const observer = useRef()
   const lastBlogElement = useCallback(node => {
@@ -21,9 +21,11 @@ export default function PinterstLayout({cards,linker}) {
       and make is loading a dependency */]);
   return (
     <div className='layout'>
+
       {cards.map((item, index) => {
         if (cards.length === index + 1) {
-          return <div className='card' key={index + 23}>
+          return (<div className='card' key={index + 23}>
+            {/* <Link to={blog ? `/blog/${item.name}` : `/project/${item.name}`} className="link"> */}
             <div className='cardimage'>
               <ImageBox src={item.img} size="16px" />
             </div>
@@ -35,15 +37,20 @@ export default function PinterstLayout({cards,linker}) {
 
               </div>
               <h3 ref={lastBlogElement}>{item.name}</h3>
-              <span className='carddec'> {item.passages[0].split("", 20)} ...</span>
-              <Link to={`/${linker}/${index}`} className="link">
-                <span className='link'>Continue Reading</span>
-              </Link>
+              {blog ? <><span className='carddec'> {item.passages[0].split("", 20)} ...</span>
+                <Link to={`/${linker}/${index}`} className="link">
+                  <span className='link'>Continue Reading</span>
+                </Link></> : project ? <><span className='carddec'> {item.passages}</span></> : <></>}
+
+
             </div>
+            {/* </Link> */}
           </div>
-        }
+
+        )}
         else {
-          return <div className='card' key={index + 23}>
+          return (<div className='card' key={index + 23}>
+            {/* <Link to={blog ? `/blog/${item.name}` : `/project/${item.name}`} className="link"> */}
             <div className='cardimage'>
               <ImageBox src={item.img} size="16px" />
             </div>
@@ -55,14 +62,20 @@ export default function PinterstLayout({cards,linker}) {
 
               </div>
               <h3>{item.name}</h3>
-              <span className='carddec'> {item.passages[0].split("", 20)} ...</span>
-              <Link to={`/${linker}/${index}`} className="link">
-                <span className='link'>Continue Reading</span>
-              </Link>
+              {blog ? <><span className='carddec'> {item.passages[0].split("", 20)} ...</span>
+                <Link to={`/${linker}/${index}`} className="link">
+                  <span className='link'>Continue Reading</span>
+                </Link></> : project ? <><span className='carddec'> {item.passages}</span></> : <></>}
+
             </div>
-          </div>
+            {/* </Link > */}
+          </div >
+
+          )
         }
       })}
-    </div>
+
+    </div >
+
   )
 }

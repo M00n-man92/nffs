@@ -36,7 +36,7 @@ export default function Blog() {
           <Locator span={"Blog"} />
         </div>
         <h4>Blog</h4>
-        <PinterstLayout cards={blogs} linker="blog"/>
+        <PinterstLayout cards={blogs} linker="blog" blog={true} project={false}/>
         {/* <div className='blogpost'>
           {blogs.map((item, index) => {
             if (blogs.length === index + 1) {

@@ -8,6 +8,7 @@
   transform: translateX(-50%);
   grid-row: 10px;
   // background-color: red;
+
   .card {
     background-color: white;
     grid-row-end: span 26;
@@ -27,6 +28,7 @@
     &:nth-child(3n) {
       grid-row-end: span 30;
     }
+
     .cardimage {
       border-radius: 16px;
       height: 70%;
@@ -51,7 +53,7 @@
         font-family: "Bellota-Bold";
         margin-bottom: -0.1%;
       }
-      .carddec{
+      .carddec {
         font-size: 12px;
         font-family: "Bellota-Light";
       }
