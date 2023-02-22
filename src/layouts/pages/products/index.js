@@ -49,6 +49,7 @@ export default function Products() {
                   autoWidth
                   value={sort}
                   onChange={(e)=>setSort(e.target.value)}
+                  size="small"
                 >
                   <MenuItem value="">
                     {sort?<em>{sort}</em>:<em>Newest to Oldest</em>}
