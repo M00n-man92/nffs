@@ -7,9 +7,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { AccountCircle, Lock, Google } from '@mui/icons-material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Alert from '@mui/material/Alert';
 
 
-export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
+export default function LoginModal ({setOpenModal, openModal, setChangeRegister}) {
   let checked = true;
   return (
     <div className='renderlogin'
@@ -19,9 +20,10 @@ export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
         position: "absolute",
         left: "50%",
         top: "35%",
-        height: "60%",
-        width: "33.4",
+        // height: "60%",
+        width: "33.4%",
         transform: "translate(-50%, -50%)",
+        outline: "none",
         opacity: "1",
         backgroundColor: "white",
         border: "none"
@@ -29,6 +31,7 @@ export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
       }}
     >
       <div className='loginheader'>
+
         <div className='loginsigintext'>
           <span>LOGIN</span>
         </div>
@@ -43,6 +46,12 @@ export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
           <Close />
         </button>
       </div>
+      <div className="alert">
+        {/* <Alert severity="error">This is an error alert — check it out!</Alert> */}
+
+        <Alert  severity="success">This is a success alert — check it out!</Alert>
+      </div>
+
       <div className='loginmiddle'>
         <TextField
           className="logintextfield"
@@ -77,10 +86,10 @@ export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
         <button className="loginsigininbutton">
           LOGIN
         </button>
-        <div className="logingoogle">
-          <Google style={{ width: "20%", fontSize: "20px", border: " 1px solid #3c8daa", height: "100%" }} />
+        {/* <div className="logingoogle">
+          <Google style={{ width: "20%", fontSize: "20px", border: " 1px solid #3c8daa", height: "10%" }} />
           <button className="googlebutton"> Sign In with Google</button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
