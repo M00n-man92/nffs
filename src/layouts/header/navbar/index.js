@@ -8,6 +8,8 @@ import Modal from '@mui/material/Modal';
 // modals 
 import LoginModal from "./modal/loginModal/index"
 import RegisterModal from './modal/registerModal/index';
+import LoginModal from "./modal/loginModal/index"
+import RegisterModal from './modal/registerModal/index';
 import Sidebar from '../sidebar';
 import { Link } from 'react-router-dom';
 export default function NavBar() {
@@ -24,6 +26,8 @@ export default function NavBar() {
           borderRadius: "4px",
           overflow: "auto",
           outline: "none"
+          overflow: "auto",
+          outline: "none"
         }}
         open={!openModal}
         onClose={(e) => { setOpenModal(!openModal); setChangeRegister(true) }}
@@ -38,6 +42,8 @@ export default function NavBar() {
       </Modal>
     )
   }
+  // console.log(process.env.REACT_APP_LOCAL_URL);
+
   return (
     <div className='nav' >
       {renderModal()}
@@ -92,6 +98,7 @@ export default function NavBar() {
             </div>
           </Link>
           {/* <div className='verticallines'></div> */}
+
 
           {/* <div className='verticallines'></div> */}
           <Link className='link' to="/blogs">

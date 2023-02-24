@@ -207,7 +207,7 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
 
             value={account}
             label="Coffee Profile"
-            onChange={(e) => setAccount(e.target.value)}
+            // onChange={(e) => setAccount(e.target.value)}
             required
           >
             <MenuItem value="firm">Firm</MenuItem>
