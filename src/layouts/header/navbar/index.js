@@ -8,8 +8,6 @@ import Modal from '@mui/material/Modal';
 // modals 
 import LoginModal from "./modal/loginModal/index"
 import RegisterModal from './modal/registerModal/index';
-import LoginModal from "./modal/loginModal/index"
-import RegisterModal from './modal/registerModal/index';
 import Sidebar from '../sidebar';
 import { Link } from 'react-router-dom';
 export default function NavBar() {
@@ -18,16 +16,14 @@ export default function NavBar() {
   const [account, setAccount] = useState("");
   const [openSidebar, setOpenSidebar] = useState(false);
   const renderModal = () => {
-    return (
+    return (<>
       <Modal
         style={{
           opacity: "1",
           border: "none",
           borderRadius: "4px",
           overflow: "auto",
-          outline: "none"
-          overflow: "auto",
-          outline: "none"
+          outline: "none",
         }}
         open={!openModal}
         onClose={(e) => { setOpenModal(!openModal); setChangeRegister(true) }}
@@ -40,6 +36,7 @@ export default function NavBar() {
           : <RegisterModal setOpenModal={setOpenModal} openModal={openModal} setChangeRegister={setChangeRegister} setAccount={setAccount} account={account} />}
 
       </Modal>
+    </>
     )
   }
   // console.log(process.env.REACT_APP_LOCAL_URL);

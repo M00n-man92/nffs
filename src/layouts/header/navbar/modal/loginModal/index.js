@@ -3,16 +3,25 @@ import { useState } from "react"
 import "../../../../../styles/layout/nav/loginmodal/loginModal.scss"
 /// material ui
 import { Close } from '@mui/icons-material'
-import { TextField } from '@mui/material';
+import { CircularProgress, TextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { AccountCircle, Lock, Google } from '@mui/icons-material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Alert from '@mui/material/Alert';
-
+// api call to login the user
+import { login } from "../../../../../redux/apiCall";
+// state dispacther
+import { useDispatch, useSelector } from 'react-redux';
+// router import 
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginModal({ setOpenModal, openModal, setChangeRegister }) {
   let checked = true;
+  const navigate = useNavigate()
+  // getting the state from the website
+  const { isFetching, error, currentUser } = useSelector(state => state.user)
+
   // controllers to show alets
   const [alert, setAlert] = useState(false);
   const [successAlert, setSuccessAlert] = useState(false);
@@ -24,12 +33,52 @@ export default function LoginModal({ setOpenModal, openModal, setChangeRegister 
   const [errorOn, setErrorOn] = useState("")
   // vars for the form
   const [email, setEmail] = useState("")
-  const [username, setUserName] = useState("")
+  const [userName, setUserName] = useState("")
   const [password, setPassWord] = useState("")
-  const handleLogin = () => {
-    console.log(email)
-    console.log(password)
+  // dispatcher
+  const dispatch = useDispatch()
+  const handleLogin = async () => {
+    setAlert(false);
+    setSuccessAlert(false);
+    setErrorAlert(false);
+    setErrorMessage("");
+    setSuccessMessage("");
+    let user
+    if (email.indexOf("@") === -1) {
+      user = { userName, password }
+    }
+    else {
+      user = { password, email }
+    }
+    // console.log(userr)
+    if (password.length >= 8) {
+      try {
+        const res = await login(dispatch, user)
+        if (res.success) {
+          // console.log(res)
+          setAlert(true);
+          setSuccessAlert(true)
+          setSuccessMessage("Login Successful ");
+          // sending the user to the home page after successfully loging in
+            navigate("/")
+        }
+        else {
+          // console.log(res)
+          setAlert(true);
+          setErrorAlert(true)
+          setErrorMessage(res.msg);
+        }
+      }
+      catch (e) {
+        // console.log(e)
+        setAlert(true);
+        setErrorAlert(true)
+        setErrorMessage("Error happend at " + e);
+      }
+    }
+
   }
+  // console.log(isFetching,error,currentUser);
   return (
     <div className='renderlogin'
       style={{
@@ -67,7 +116,7 @@ export default function LoginModal({ setOpenModal, openModal, setChangeRegister 
       {alert && <div className="alert">
 
         {errorAlert && <Alert severity="error">{errorMessage}</Alert>}
-        {successAlert && <Alert severity="success">This is a success alert — check it out!</Alert>}
+        {successAlert && <Alert severity="success">{successMessage}</Alert>}
 
       </div>
       }
@@ -111,8 +160,10 @@ export default function LoginModal({ setOpenModal, openModal, setChangeRegister 
         <button
           className="loginsigininbutton"
           onClick={(e) => handleLogin()}
+          disabled={isFetching}
         >
-          LOGIN
+          {isFetching?<CircularProgress style={{color:"white", width:"20px", height:"20px"}} />:<>Login</>}
+          
         </button>
         {/* <div className="logingoogle">
           <Google style={{ width: "20%", fontSize: "20px", border: " 1px solid #3c8daa", height: "10%" }} />

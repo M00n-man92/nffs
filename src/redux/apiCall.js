@@ -1,4 +1,4 @@
-import { publicRequest } from "../requestMethods";
+import { publicRequest } from "../constant/requestMethods";
 import { loginError, loginStart, loginSuccess, logoutSuccess, registerStart, registerSuccess, registerError, updateStart, updateError, updateSuccess } from "./userRedux"
 
 export const login = async (dispatch, user) => {
@@ -7,11 +7,12 @@ export const login = async (dispatch, user) => {
         const reply = await publicRequest.post("/user/login", user)
         // console.log(reply)
         if (reply.data) {
-            const res = reply.data
-            dispatch(loginSuccess(reply.data))
-            return reply.data
+            const res = reply.data;
+            dispatch(loginSuccess(reply.data));
+            return reply.data;
         }
         else {
+            dispatch(loginError);
             return "fuck"
 
         }
