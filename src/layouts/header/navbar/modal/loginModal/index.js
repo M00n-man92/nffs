@@ -9,7 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 
-export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
+export default function LoginModal ({setOpenModal, openModal, setChangeRegister}) {
   let checked = true;
   return (
     <div className='renderlogin'
@@ -20,7 +20,7 @@ export const loginModal = (setOpenModal, openModal, setChangeRegister) => {
         left: "50%",
         top: "35%",
         height: "60%",
-        width: "33.4",
+        width: "33.4%",
         transform: "translate(-50%, -50%)",
         opacity: "1",
         backgroundColor: "white",

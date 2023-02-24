@@ -11,7 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
-export const registerModal = (setOpenModal, openModal, setChangeRegister, setAccount, account) => {
+export default function RegisterModal ({setOpenModal, openModal, setChangeRegister, setAccount, account}) {
   
   return (
     <div className='renderregister'
@@ -150,7 +150,7 @@ export const registerModal = (setOpenModal, openModal, setChangeRegister, setAcc
 
             value={account}
             label="Coffee Profile"
-            onChange={(e) => setAccount(e.target.value)}
+            // onChange={(e) => setAccount(e.target.value)}
             required
           >
             <MenuItem value="Agent">Agent</MenuItem>

@@ -6,8 +6,8 @@ import { AccountCircleOutlined } from '@mui/icons-material'
 import Modal from '@mui/material/Modal';
 
 // modals 
-import { loginModal } from "./modal/loginModal/index"
-import { registerModal } from './modal/registerModal/index';
+import LoginModal from "./modal/loginModal/index"
+import RegisterModal from './modal/registerModal/index';
 import Sidebar from '../sidebar';
 import { Link } from 'react-router-dom';
 export default function NavBar() {
@@ -22,19 +22,22 @@ export default function NavBar() {
           opacity: "1",
           border: "none",
           borderRadius: "4px",
-          overflow: "auto"
+          overflow: "auto",
+          outline: "none"
         }}
         open={!openModal}
         onClose={(e) => { setOpenModal(!openModal) }}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        // aria-labelledby="modal-modal-title"
+        // // aria-describedby="modal-modal-description"
       >
-
-        {changeRegister ? loginModal(setOpenModal, openModal, setChangeRegister) : registerModal(setOpenModal, openModal, setChangeRegister, setAccount, account)}
-
+          {changeRegister ?
+           <LoginModal setOpenModal={setOpenModal} openModal={openModal} setChangeRegister={setChangeRegister} />
+           : <RegisterModal setOpenModal={setOpenModal} openModal={openModal} setChangeRegister={setChangeRegister} setAccount={setAccount} account={account} /> }
       </Modal>
     )
   }
+  // console.log(process.env.REACT_APP_LOCAL_URL);
+
   return (
     <div className='nav' >
       {renderModal()}
@@ -89,7 +92,7 @@ export default function NavBar() {
             </div>
           </Link>
           {/* <div className='verticallines'></div> */}
-          
+
           {/* <div className='verticallines'></div> */}
           <Link className='link' to="/blogs">
             <div className='containers'>
