@@ -1,3 +1,4 @@
+import { useState } from "react"
 /// scss class
 import "../../../../../styles/layout/nav/loginmodal/loginModal.scss"
 /// material ui
@@ -10,8 +11,25 @@ import Checkbox from '@mui/material/Checkbox';
 import Alert from '@mui/material/Alert';
 
 
-export default function LoginModal ({setOpenModal, openModal, setChangeRegister}) {
+export default function LoginModal({ setOpenModal, openModal, setChangeRegister }) {
   let checked = true;
+  // controllers to show alets
+  const [alert, setAlert] = useState(false);
+  const [successAlert, setSuccessAlert] = useState(false);
+  const [errorAlert, setErrorAlert] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  // error checkers
+  const [fieldError, setFieldError] = useState(false)
+  const [errorOn, setErrorOn] = useState("")
+  // vars for the form
+  const [email, setEmail] = useState("")
+  const [username, setUserName] = useState("")
+  const [password, setPassWord] = useState("")
+  const handleLogin = () => {
+    console.log(email)
+    console.log(password)
+  }
   return (
     <div className='renderlogin'
       style={{
@@ -46,11 +64,13 @@ export default function LoginModal ({setOpenModal, openModal, setChangeRegister}
           <Close />
         </button>
       </div>
-      <div className="alert">
-        {/* <Alert severity="error">This is an error alert — check it out!</Alert> */}
+      {alert && <div className="alert">
 
-        <Alert  severity="success">This is a success alert — check it out!</Alert>
+        {errorAlert && <Alert severity="error">{errorMessage}</Alert>}
+        {successAlert && <Alert severity="success">This is a success alert — check it out!</Alert>}
+
       </div>
+      }
 
       <div className='loginmiddle'>
         <TextField
@@ -64,6 +84,7 @@ export default function LoginModal ({setOpenModal, openModal, setChangeRegister}
               </InputAdornment>
             ),
           }}
+          onChange={(e) => { setEmail(e.target.value); setUserName(e.target.value) }}
         />
         <TextField
           className="logintextfield"
@@ -76,14 +97,21 @@ export default function LoginModal ({setOpenModal, openModal, setChangeRegister}
                 <Lock />
               </InputAdornment>
             ),
-          }} />
+          }}
+          helperText={password && password.length < 8 && "makesure is greater than 8 letters"}
+          error={password && password.length < 8}
+          onChange={(e) => { setPassWord(e.target.value) }}
+        />
         <div className="loginrememberme">
           <FormControlLabel control={<Checkbox />} label="Remember Me" />
           <a href="https://realestate.niddf.com/" >Lost your password?</a>
         </div>
       </div>
       <div className='loginlast'>
-        <button className="loginsigininbutton">
+        <button
+          className="loginsigininbutton"
+          onClick={(e) => handleLogin()}
+        >
           LOGIN
         </button>
         {/* <div className="logingoogle">
