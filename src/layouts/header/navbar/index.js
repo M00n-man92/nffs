@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   const [openModal, setOpenModal] = useState(true);
   const [changeRegister, setChangeRegister] = useState(true);
-  const [account, setAccount] = useState("");
   const [openSidebar, setOpenSidebar] = useState(false);
   const renderModal = () => {
     return (<>
@@ -33,7 +32,7 @@ export default function NavBar() {
 
         {changeRegister ?
           <LoginModal setOpenModal={setOpenModal} openModal={openModal} setChangeRegister={setChangeRegister} />
-          : <RegisterModal setOpenModal={setOpenModal} openModal={openModal} setChangeRegister={setChangeRegister} setAccount={setAccount} account={account} />}
+          : <RegisterModal setOpenModal={setOpenModal} openModal={openModal} setChangeRegister={setChangeRegister} />}
 
       </Modal>
     </>

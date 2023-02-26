@@ -3,7 +3,7 @@
 import "../../../../../styles/layout/nav/registermodal/registerModal.scss"
 /// material ui
 import { Close } from '@mui/icons-material'
-import { TextField } from '@mui/material';
+import { TextField, CircularProgress } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { AccountCircle, Lock, Google, Email, Phone } from '@mui/icons-material';
 import Select from '@mui/material/Select';
@@ -12,42 +12,144 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Alert from '@mui/material/Alert';
 import { useState } from "react";
+// dispatch action 
+import { useDispatch, useSelector } from "react-redux";
+// 
+import { register } from "../../../../../redux/apiCall";
+export default function RegisterModal({ setOpenModal, openModal, setChangeRegister }) {
+  const dispatch = useDispatch()
 
-export default function RegisterModal({ setOpenModal, openModal, setChangeRegister, setAccount, account }) {
+  // getting the state from the website
+  const { isFetching, error, currentUser } = useSelector(state => state.user)
+
   // controllers to show alets
   const [alert, setAlert] = useState(false);
   const [successAlert, setSuccessAlert] = useState(false);
   const [errorAlert, setErrorAlert] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("")
   // error checkers
   const [fieldError, setFieldError] = useState(false)
-  const [errorOn, setErrorOn] = useState("")
+  const [errorOn, setErrorOn] = useState(false);
   // vars for the form
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [username, setUserName] = useState("")
   const [lName, setLName] = useState("")
-  const [cell, setCell] = useState();
+  const [cell, setCell] = useState(0);
   const [password, setPassWord] = useState("")
   const [retype, setRetype] = useState("")
-  const handleRegister = () => {
+  const [account, setAccount] = useState("")
+  const handleRegister = async (e) => {
+    e.preventDefault()
     setAlert(false);
     setSuccessAlert(false);
     setErrorAlert(false);
     setErrorMessage("");
     setErrorOn("")
-    console.log(email.indexOf("@"))
-    if (email.indexOf("@")===-1) {
+    setFieldError(false);
+    console.log(errorOn, fieldError, errorAlert)
+
+    if (email.indexOf("@") === -1) {
       setFieldError(true);
-      console.log(email)
       setErrorOn("email");
       setAlert(true)
       setErrorAlert(true)
       setErrorMessage("Please fill the forms correctly")
+      console.log(errorMessage)
+      return
     }
-    console.log(fieldError)
+    if (!email) {
+      setFieldError(true);
+      setErrorOn("email");
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please fill the forms correctly")
+      return
+    }
+    if (!account) {
+      setFieldError(true);
+      setErrorOn("account");
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please fill the forms correctly")
+      return
+    }
+    if (!name) {
+      console.log(name.length)
+      setFieldError(true)
+      setErrorOn("firstname")
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please fill the forms correctly")
+      return
+    }
+    if (lName.length < 1) {
+      // console.log(name.length)
+      setFieldError(true)
+      setErrorOn("lastname")
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please fill the forms correctly")
+      return
+    }
+    if (!username) {
+      // console.log(username.length)
+      setFieldError(true)
+      setErrorOn("username")
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please fill the forms correctly")
+      return
+    }
+    if (!cell) {
+      console.log(cell)
+      setFieldError(true)
+      setErrorOn("cell")
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please fill the forms correctly")
+      return
+    }
+    if (cell.length < 9) {
+      console.log(cell)
+      setFieldError(true)
+      setErrorOn("cell")
+      setAlert(true)
+      setErrorAlert(true)
+      setErrorMessage("Please input real cell phone numbers")
+      return
+    }
+    if (fieldError && errorAlert && errorOn) {
+      console.log("still an error")
+      return;
+    }
+    else {
+      try {
+        const user = {name,lName,username,password,cell,account,email}
+        const res = await register(dispatch, user)
+        if (res.success) {
+          // console.log(res)
+          setAlert(true);
+          setSuccessAlert(true)
+          setSuccessMessage("Registerd Successfully please check your email to receive a conformation link");
+        }
+        else {
+          // console.log(res)
+          setAlert(true);
+          setErrorAlert(true)
+          setErrorMessage(res.msg);
+        }
+      }
+      catch (e) {
+        setAlert(true);
+        setErrorAlert(true)
+        setErrorMessage("Error happend at " + e);
+      }
+    }
+    console.log(errorOn)
   }
-  //  console.log(fieldError)
+  //  console.log(account)
   return (
     <div className='renderregister'
       style={{
@@ -84,7 +186,7 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
       {alert && <div className="alert">
 
         {errorAlert && <Alert severity="error">{errorMessage}</Alert>}
-        {successAlert && <Alert severity="success">This is a success alert — check it out!</Alert>}
+        {successAlert && <Alert severity="success">{successAlert}</Alert>}
 
       </div>
       }
@@ -107,6 +209,8 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
               </InputAdornment>
             ),
           }}
+          onChange={(e) => setName(e.target.value)}
+          error={fieldError && errorOn.indexOf("firstname") != -1}
         />
         <TextField
           size="small"
@@ -120,6 +224,8 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
               </InputAdornment>
             ),
           }}
+          onChange={(e) => setLName(e.target.value)}
+          error={fieldError && errorOn.indexOf("lastname") != -1}
         />
         <TextField
           size="small"
@@ -134,13 +240,15 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
               </InputAdornment>
             ),
           }}
+          onChange={(e) => { setUserName(e.target.value) }}
+          error={fieldError && errorOn.indexOf("username") != -1}
         />
         <TextField
           size="small"
 
           className="registertextfield"
           label="Email"
-          error={errorOn && errorOn === "email"}
+          error={fieldError && errorOn === "email"}
           type="email"
           variant='outlined'
           InputProps={{
@@ -155,7 +263,7 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
         <TextField
           size="small"
           type="number"
-          error={cell && cell !== Number}
+          error={cell && cell.length < 9}
           className="registertextfield"
           label="Phone number"
           variant='outlined'
@@ -166,6 +274,7 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
               </InputAdornment>
             ),
           }}
+          onChange={(e) => setCell(e.target.value)}
         />
         <TextField
           size="small"
@@ -207,8 +316,9 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
 
             value={account}
             label="Coffee Profile"
-            // onChange={(e) => setAccount(e.target.value)}
+            onChange={(e) => setAccount(e.target.value)}
             required
+            error={fieldError && errorOn === "account"}
           >
             <MenuItem value="firm">Firm</MenuItem>
             <MenuItem value="manufacturer">Manufacturer</MenuItem>
@@ -222,8 +332,10 @@ export default function RegisterModal({ setOpenModal, openModal, setChangeRegist
         </div>
       </div>
       <div className='registerlast'>
-        <button className="registersigininbutton" onClick={(e) => handleRegister()}>
-          Register
+        
+        <button className="registersigininbutton" onClick={(e) => handleRegister(e)}>
+        {isFetching?<CircularProgress style={{color:"white", width:"20px", height:"20px"}} />:<>Register</>}
+          
         </button>
         {/* <div className="registergoogle">
           <Google style={{ width: "20%", fontSize: "20px", border: " 1px solid #3c8daa", height: "100%" }} />

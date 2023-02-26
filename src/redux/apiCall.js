@@ -12,7 +12,7 @@ export const login = async (dispatch, user) => {
             return reply.data;
         }
         else {
-            dispatch(loginError);
+            dispatch(loginError());
             return "fuck"
 
         }
@@ -41,7 +41,9 @@ export const register = async (dispatch, user) => {
             // console.log(reply.data)
             return reply.data
         }
-        else { }
+        else { 
+            dispatch(registerError())
+        }
     }
     catch (e) {
         // console.log(e.response.data)
@@ -59,7 +61,7 @@ export const update = async (dispatch, email) => {
             // console.log(reply.data)
             return reply.data
         }
-        else { }
+        else { dispatch(updateError()) }
     }
     catch (e) {
         // console.log(e.response.data)

@@ -3,7 +3,8 @@ import axios from 'axios'
 const baseUrl = process.env.REACT_APP_API_URL
 const otherUrl = process.env.REACT_APP_LOCAL_URL
 // getting the elements form the localstorage
-var saved = JSON.parse(localStorage.getItem("persist:root"))
+var saved = JSON.parse(localStorage.getItem("persist:arch"))
+
 var token
 if (saved) {
 	var user = saved.user
