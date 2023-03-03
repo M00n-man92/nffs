@@ -44,6 +44,7 @@ export default function Cart() {
 		// setStripeToken && makeRequest()
 
 	}, [quantity, thatsjusthowitgo, setStripeToken, makeRequest()])
+	console.log(cart)
 	return (
 		<>
 			<div className="wehadarule">

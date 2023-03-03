@@ -10,10 +10,17 @@ import LoginModal from "./modal/loginModal/index"
 import RegisterModal from './modal/registerModal/index';
 import Sidebar from '../sidebar';
 import { Link } from 'react-router-dom';
+// state dispacther
+import { useDispatch, useSelector } from 'react-redux';
+
 export default function NavBar() {
   const [openModal, setOpenModal] = useState(true);
   const [changeRegister, setChangeRegister] = useState(true);
   const [openSidebar, setOpenSidebar] = useState(false);
+  // gets the data fro the local storage
+  // getting the state from the website
+  const { isFetching, error, currentUser } = useSelector(state => state.user)
+
   const renderModal = () => {
     return (<>
       <Modal
@@ -133,7 +140,7 @@ export default function NavBar() {
             </div>
           </Link>
         </div>
-        <div className='usercred'>
+        {!currentUser ? <div className='usercred'>
           <AccountCircleOutlined
             style={{ color: "white", fontSize: "30px", cursor: "pointer" }}
             className="accountcircle"
@@ -146,10 +153,15 @@ export default function NavBar() {
             </button>
           </div>
  */}
-        </div>
+        </div> :
+          <div className={openSidebar ? "lines open" : "lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}> 
+            helowworld
+          </div>
+        }
+
       </div>
-      <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
-    </div>
+      {/* <Sidebar open={openSidebar} setOpen={setOpenSidebar} /> */}
+    </div >
   )
 }
 /* <div className='nav'>

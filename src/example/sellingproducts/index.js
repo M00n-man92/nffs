@@ -2,9 +2,12 @@ import { useRef, useCallback, useState } from 'react'
 import "./selling.scss";
 import ImageBox from "../imagebox"
 import Rooms from "../rooms"
-import { AttachFile, NavigateNext } from '@mui/icons-material'
+import { AttachFile, NavigateNext, AddShoppingCart } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
-export default function PinterstLayout({cards,linker}) {
+//
+import { addProduct } from '../../redux/cartRedux';
+import {useDispatch} from 'react-redux'
+export default function PinterstLayout({ cards, linker }) {
   const [pageNumber, setPageNumber] = useState(1);
   const observer = useRef()
   const lastBlogElement = useCallback(node => {
@@ -19,6 +22,13 @@ export default function PinterstLayout({cards,linker}) {
     if (node) observer.current.observe(node);
   }, [/* Todo setup a state to check it there are any more blogs to be seen
       and make is loading a dependency */]);
+  ///
+  const [individualItem, setIndividualItem] = useState({})
+  const dispatch = useDispatch();
+  const handleClickBuy = () =>{
+    dispatch(addProduct(individualItem))
+
+  }  
   return (
     <div className='sellinglayout'>
       {cards.map((item, index) => {
@@ -26,6 +36,7 @@ export default function PinterstLayout({cards,linker}) {
           return <div className='selling' key={index + 23}>
             <div className='sellingimage'>
               <ImageBox src={item.img} size="16px" />
+
             </div>
 
             <div className='sellingcardbottom'>
@@ -38,6 +49,10 @@ export default function PinterstLayout({cards,linker}) {
               <Link to={`/${linker}/${index}`} className="link">
                 <span className='link'>Details</span>
               </Link>
+              <div className='buy'>
+                <AddShoppingCart onClick={handleClickBuy}/>
+
+              </div>
             </div>
           </div>
         }
@@ -57,6 +72,9 @@ export default function PinterstLayout({cards,linker}) {
               <Link to={`/${linker}/${index}`} className="link">
                 <span className='link'>Details</span>
               </Link>
+              <div className='buy'>
+                <AddShoppingCart onClick={async (e)=>{await setIndividualItem(item);handleClickBuy()}}/>
+              </div>
             </div>
           </div>
         }

@@ -63,10 +63,16 @@ export default function LoginModal({ setOpenModal, openModal, setChangeRegister 
             navigate("/")
         }
         else {
-          // console.log(res)
+          console.log(res)
           setAlert(true);
           setErrorAlert(true)
-          setErrorMessage(res.msg);
+          if (res.msg){
+            setErrorMessage(res.msg);
+          }
+          else {
+            setErrorMessage(res.message)
+          }
+          
         }
       }
       catch (e) {
