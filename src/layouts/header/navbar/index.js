@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 /// css class
 import "../../../styles/layout/nav/navbar.scss"
 // material ui 
-import { AccountCircleOutlined } from '@mui/icons-material'
+import { AccountBox, AccountCircleOutlined, Person } from '@mui/icons-material'
 import Modal from '@mui/material/Modal';
 
 // modals 
@@ -45,124 +45,134 @@ export default function NavBar() {
     </>
     )
   }
-  // console.log(process.env.REACT_APP_LOCAL_URL);
 
-  return (
-    <div className='nav' >
-      {renderModal()}
-      <div className='navitems'>
-        <div className='navigators'>
-          {/* <div className={openSidebar ? "lines open" : "lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}>
-            <div className="single">
+  const navDisplay = () => {
+    return (
+      <div className='nav' >
+        {renderModal()}
+        <div className='navitems'>
+          <div className='navigators'>
+            {/* <div className={openSidebar ? "lines open" : "lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}>
+              <div className="single">
+              </div>
+              <div className="single">
+              </div>
+              <div className="single">
+              </div>
+            </div> */}
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/">
+              <div className='containers'>
+
+                <span> HOME </span>
+
+              </div>
+            </Link>
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/blogs">
+              <div className='containers'>
+
+                <span> BLOG </span>
+
+              </div>
+            </Link>
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/firms">
+              <div className='containers'>
+
+                <span> FIRM </span>
+
+              </div>
+            </Link>
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/products">
+              <div className='containers'>
+
+                <span> PRODUCT</span>
+
+              </div>
+            </Link>
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/projects">
+              <div className='containers'>
+
+                <span> PROJECT </span>
+
+              </div>
+            </Link>
+            {/* <div className='verticallines'></div> */}
+
+
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/blogs">
+              <div className='containers'>
+
+                <span> PROFESTTIONAL </span>
+
+              </div>
+            </Link>
+            {/* <div className='verticallines'></div> */}
+            <Link className='link' to="/blogs">
+              <div className='containers'>
+
+                <span> TENDER </span>
+
+              </div>
+            </Link>
+
+            <Link className='link' to="/blogs">
+              <div className='containers'>
+                <span> MATERIAL </span>
+
+              </div>
+            </Link>
+            <Link className='link' to="/manufacturers">
+              <div className='containers'>
+
+                <span> MANUFACTURER </span>
+
+              </div>
+            </Link>
+            <Link className='link' to="/blogs">
+              <div className='containers'>
+
+                <span> VR </span>
+              </div>
+            </Link>
+          </div>
+          {!currentUser ? <div className='usercred'>
+            <AccountCircleOutlined
+              style={{ color: "white", fontSize: "30px", cursor: "pointer" }}
+              className="accountcircle"
+              onClick={(e) => { setOpenModal(!openModal) }}
+            />
+
+            {/* <div className='create'>
+              <button>
+                CREATE A LISTING
+              </button>
             </div>
-            <div className="single">
-            </div>
-            <div className="single">
-            </div>
-          </div> */}
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/">
-            <div className='containers'>
-
-              <span> HOME </span>
+   */}
+          </div> :
+            <div className='usercred' >
+              <AccountBox
+                style={{ color: "white", fontSize: "30px", cursor: "pointer", backgroundColor: "#BFBFBF" }}
+                className="user"
+                onClick={(e) => { setOpenSidebar(true) }}
+              />
 
             </div>
-          </Link>
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/blogs">
-            <div className='containers'>
+          }
 
-              <span> BLOG </span>
-
-            </div>
-          </Link>
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/firms">
-            <div className='containers'>
-
-              <span> FIRM </span>
-
-            </div>
-          </Link>
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/products">
-            <div className='containers'>
-
-              <span> PRODUCT</span>
-
-            </div>
-          </Link>
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/projects">
-            <div className='containers'>
-
-              <span> PROJECT </span>
-
-            </div>
-          </Link>
-          {/* <div className='verticallines'></div> */}
-
-
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/blogs">
-            <div className='containers'>
-
-              <span> PROFESTTIONAL </span>
-
-            </div>
-          </Link>
-          {/* <div className='verticallines'></div> */}
-          <Link className='link' to="/blogs">
-            <div className='containers'>
-
-              <span> TENDER </span>
-
-            </div>
-          </Link>
-
-          <Link className='link' to="/blogs">
-            <div className='containers'>
-              <span> MATERIAL </span>
-
-            </div>
-          </Link>
-          <Link className='link' to="/manufacturers">
-            <div className='containers'>
-
-              <span> MANUFACTURER </span>
-
-            </div>
-          </Link>
-          <Link className='link' to="/blogs">
-            <div className='containers'>
-
-              <span> VR </span>
-            </div>
-          </Link>
         </div>
-        {!currentUser ? <div className='usercred'>
-          <AccountCircleOutlined
-            style={{ color: "white", fontSize: "30px", cursor: "pointer" }}
-            className="accountcircle"
-            onClick={(e) => { setOpenModal(!openModal) }}
-          />
+        {/* <Sidebar open={openSidebar} setOpen={setOpenSidebar} /> */}
+      </div >
+    )
+  }
 
-          {/* <div className='create'>
-            <button>
-              CREATE A LISTING
-            </button>
-          </div>
- */}
-        </div> :
-          <div className={openSidebar ? "lines open" : "lines"} onClick={(e) => { setOpenSidebar(!openSidebar) }}> 
-            helowworld
-          </div>
-        }
-
-      </div>
-      {/* <Sidebar open={openSidebar} setOpen={setOpenSidebar} /> */}
-    </div >
-  )
+  return {
+    display: navDisplay, sideSetOpen: setOpenSidebar, isItOpen: openSidebar 
+  }
 }
 /* <div className='nav'>
     </div> */

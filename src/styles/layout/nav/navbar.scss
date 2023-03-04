@@ -143,6 +143,19 @@
       .accountcircle:hover {
         color: #00aeff;
       }
+      .lines{
+        
+        flex: 0.1;
+
+        display: flex;
+      align-items: center;
+        background-color: red;
+        .user{
+          background-color: #BFBFBF;
+  
+        }
+      }
+      
       .create {
         button {
           cursor: pointer;

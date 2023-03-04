@@ -1,36 +1,35 @@
 .sidebar {
-  position: relative;
-  top: 0%;
-  left: 0%;
-  width: 20.5%;
-  height: 700%;
-  background-color: #004274;
+  position: absolute;
+  top: 9%;
+  left: 76.5%;
+  width: 15.5%;
+  height: 20%;
+  // background-color: red;
   transition: all 1s ease;
+align-items: center;
 
   .catagory {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    h3 {
-      font-size: 12px;
-      font-family: "Bellota-Bold";
-      color: white;
-    }
+    justify-content: space-around;
     .lists {
+      height: 80%;
+      margin-bottom: 1%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 70%;
+      justify-content: flex-start;
+      width: 100%;
       cursor: pointer;
-      border-bottom: 1px solid #00578f;
-      h3 {
-        font-size: 12px;
-        font-family: "Bellota-Bold";
-        color: white;
+      border-bottom: 1px solid rgba(0,0,0,.15);
+      span{
+        color: #004274;
       }
       &:hover {
-        background-color: #00578f;
-        h3 {
+        background-color: #e2f6ff;
+        span {
           color: #00aeff;
         }
       }

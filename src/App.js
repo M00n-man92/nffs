@@ -24,12 +24,15 @@ function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
   const [openSidebar, setOpenSidebar] = useState(false);
-
+const {display, sideSetOpen, isItOpen} = NavBar();
+console.log(isItOpen)
   return (
 
-    <div className="App" onClick={(e)=>{ setOpenSidebar(false) }} >
+    <div className="App" onClick={(e)=>{isItOpen&&sideSetOpen(false)}} >
       {/* <Intro /> */}
-      <NavBar />
+      {display()}
+      <Sidebar open={isItOpen} />
+
       <Routes>
         <Route path="/search/:token" element={<ProductList />} />
         <Route path="/" element={<Display />} />
@@ -60,7 +63,7 @@ function App() {
       {/* <div style={{marginTop:"19%",marginLeft:"8%", marginRight:"8%", width:"100%", backgroundColor:"red", height:"150vh" }}> */}
 
       {/* </div> */}
-      <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
+      {/* <Sidebar open={true} /> */}
 
     </div>
 
