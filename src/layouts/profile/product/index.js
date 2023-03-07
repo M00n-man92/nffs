@@ -1,7 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
 // css class
 import "../../../styles/profile/product/userproduct.scss"
 // mui 
+import Modal from '@mui/material/Modal';
 import { DataGrid } from '@mui/x-data-grid';
 // import { DataGrid } from '@mui/x-data-grid';
 import { DeleteOutline } from '@mui/icons-material';
@@ -9,8 +10,37 @@ import { DeleteOutline } from '@mui/icons-material';
 import { Link } from 'react-router-dom'
 //
 import { data } from "../../pages/products/data"
+
+//
 import ProfileSideNav from '../sidenav';
-export default function index() {
+import CreateProduct from './create';
+export default function ProfileProduct() {
+
+  // state to open create modal when create new products is opened
+  const [openModal, setOpenModal] = useState(false)
+  const renderModal = () => {
+    return (<>
+      <Modal
+        style={{
+          opacity: "1",
+          border: "none",
+          borderRadius: "4px",
+          overflow: "auto",
+          outline: "none",
+        }}
+        open={!openModal}
+        onClose={(e) => { setOpenModal(!openModal)}}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+
+
+        <CreateProduct setOpenModal={setOpenModal} openModal={openModal} />
+
+      </Modal>
+    </>
+    )
+  }
   const columns = [
     { field: '_id', headerName: 'ID', width: 90 },
     {
@@ -21,7 +51,7 @@ export default function index() {
         return (
           <div className="cellimage">
             <img src={params.row.img} />
-            <span>{params.row.name.length > 10 ? params.row.name.split("", 10): params.row.name}{params.row.name.length > 10 ? "...": ""}</span>
+            <span>{params.row.name.length > 10 ? params.row.name.split("", 10) : params.row.name}{params.row.name.length > 10 ? "..." : ""}</span>
 
           </div>
         )
@@ -67,12 +97,17 @@ export default function index() {
   return (
     <div className="userproduct">
       <ProfileSideNav page={"product"} />
+      {renderModal()}
       <div className='userproductmargin'>
         <div className='userproductcontainer'>
           <div className='userproductheader'>
             <span className='userproducttitle'>Products</span>
-            <button className='userproductcreatebutton'>Create Product</button>
+            <button
+              className='userproductcreatebutton'
+              onClick={(e) => { setOpenModal(!openModal) }}
+            >Create Product</button>
           </div>
+
           <div className="userproductgridd">
 
             <DataGrid
