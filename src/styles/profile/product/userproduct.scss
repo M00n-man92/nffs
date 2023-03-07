@@ -1,0 +1,93 @@
+.userproduct {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  .userproductmargin {
+    width: 80%;
+    height: 100%;
+    .userproductcontainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      
+      // background-color: red;
+      .userproductheader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        .userproducttitle {
+          font-size: 28px;
+          font-family: "Bellota-Bold";
+        }
+        .userproductcreatebutton {
+          background-color: #77c720;
+          color: white;
+          height: 40px;
+          width: 100px;
+          border: none;
+          cursor: pointer;
+        }
+      }
+
+      .userproductgridd {
+        // margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+        // width: 100%;
+        // background-color: red;
+        // margin-right: 5%;
+        height: 100vh;
+        .cellimage {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 70px;
+            height: 40px;
+          }
+          span {
+            margin-left: 10px;
+          }
+        }
+        .holeup {
+          display: flex;
+          align-items: center;
+          button {
+            background-color: #00aeff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            width: 70px;
+            height: 30px;
+            cursor: pointer;
+          }
+          .userproductddeletebutton:hover {
+            cursor: pointer;
+            animation: buzz 0.31s alternate-reverse 0s infinite forwards;
+          }
+          @keyframes buzz {
+            0% {
+              transform: rotate(10deg);
+            }
+            25% {
+              transform: rotate(0deg);
+            }
+            50% {
+              transform: rotate(-10deg);
+            }
+            75% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(10deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

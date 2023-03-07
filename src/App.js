@@ -20,19 +20,27 @@ import Projects from "./layouts/pages/projects";
 import Manufacturers from "./layouts/pages/manufacturer";
 import ManufacturerPage from "./layouts/pages/manufacturer/singelpage"
 import Cart from "./layouts/display/cart";
+import UserProfile from "./layouts/profile";
+import UserProduct from "./layouts/profile/product"
+//
+import { useSelector } from "react-redux";
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
   const [openSidebar, setOpenSidebar] = useState(false);
-const {display, sideSetOpen, isItOpen} = NavBar();
-console.log(isItOpen)
+  // display is for showing the nav bar, isItOpen is for the Sidenav to show it u or not
+  const { display, sideSetOpen, isItOpen } = NavBar();
+  // trigger to show the nabar
+  const [navNeeded, setNavNeeded] = useState(false);
+  // getting the user info from the storage
+  const { currentUser, isFetching, error } = useSelector(state => state.user)
   return (
 
-    <div className="App" onClick={(e)=>{isItOpen&&sideSetOpen(false)}} >
+    <div className="App" onClick={(e) => { isItOpen && sideSetOpen(false) }} >
       {/* <Intro /> */}
-      {display()}
-      <Sidebar open={isItOpen} />
+      {navNeeded && display()}
 
+      <Sidebar open={isItOpen} />
       <Routes>
         <Route path="/search/:token" element={<ProductList />} />
         <Route path="/" element={<Display />} />
@@ -47,24 +55,14 @@ console.log(isItOpen)
         <Route path="/manufacturers" element={<Manufacturers />} />
         <Route path="/manufacturer/:nameorid" element={<ManufacturerPage />} />
         <Route path="/cart" element={<Cart />} />
+        {currentUser && <>
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/profile_products" element={<UserProduct />} />
+        </>
+        }
+
+        {/* <Route path="/profile" element={<UserProfile />} /> */}
       </Routes>
-
-
-
-      {/* <Property /> */}
-      {/* <Display /> */}
-
-      {/* <DataTable 
-        table={{ columns: iColumns, rows: iRows }}
-        isSorted={false}
-        entriesPerPage
-        showTotalEntries
-      /> */}
-      {/* <div style={{marginTop:"19%",marginLeft:"8%", marginRight:"8%", width:"100%", backgroundColor:"red", height:"150vh" }}> */}
-
-      {/* </div> */}
-      {/* <Sidebar open={true} /> */}
-
     </div>
 
   );

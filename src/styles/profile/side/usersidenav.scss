@@ -1,0 +1,53 @@
+.usersidenav {
+  position: sticky;
+    top: 0;
+  // margin-top: 10%;
+  width: 20%;
+  background-color: #004274;
+height: 100vh;
+  .usersidenavcontainer {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 15%;
+    // background-color: red;
+    align-items: flex-start;
+    justify-content: center;
+    .usersidenavtitle {
+      margin-bottom: 10%;
+    }
+    .usersidenavlist {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .usersidenavindividuallist {
+        margin-bottom: 15%;
+        width: 100%;
+        &:hover {
+          span {
+            color: white;
+            cursor: pointer;
+            font-family: "Bellota-Bold";
+          }
+        }
+        &.bold{
+          span {
+            color: white;
+            cursor: auto;
+            font-family: "Bellota-Bold";
+          }
+        }
+        span {
+          font-family: "Bellota-Bold";
+          font-size: 18px;
+          margin-left: 15%;
+          color: #839eb2;
+        }
+      }
+    }
+  }
+}
