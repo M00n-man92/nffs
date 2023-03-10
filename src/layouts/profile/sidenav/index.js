@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import "../../../styles/profile/side/usersidenav.scss"
 import Room from "../../../example/rooms"
 //mui 
-import { LocationOn, FavoriteBorderOutlined, Lock, AccountCircle } from '@mui/icons-material';
+import { LocationOn, FavoriteBorderOutlined, Lock, AccountCircle, LocationCityOutlined, Widgets } from '@mui/icons-material';
 // trigger to logout the user 
 import { logout } from '../../../redux/apiCall'
 import { useDispatch } from 'react-redux'
@@ -45,10 +45,10 @@ export default function ProfileSideNav({ page }) {
           <div className={page == "project" ? "usersidenavindividuallist bold" : 'usersidenavindividuallist'}>
             {page == "project" ?
 
-              <Room icons={<Lock style={{ fontSize: "17px", color: "white" }} />} number={"Projects"} onClick={(e) => { console.log("mf") }} />
+              <Room icons={<LocationCityOutlined style={{ fontSize: "17px", color: "white" }} />} number={"Projects"} onClick={(e) => { console.log("mf") }} />
               :
               <Link className='link' to="/user_project">
-                <Room icons={<Lock style={{ fontSize: "17px", color: "white" }} />} number={"Projects"} onClick={(e) => { console.log("mf") }} />
+                <Room icons={<LocationCityOutlined style={{ fontSize: "17px", color: "white" }} />} number={"Projects"} onClick={(e) => { console.log("mf") }} />
               </Link>
             }
           </div>
@@ -56,10 +56,10 @@ export default function ProfileSideNav({ page }) {
             {page == "material" ?
 
 
-              <Room icons={<Lock style={{ fontSize: "17px", color: "white" }} />} number={"Materials"} onClick={(e) => { console.log("mf") }} />
+              <Room icons={<Widgets style={{ fontSize: "17px", color: "white" }} />} number={"Materials"} onClick={(e) => { console.log("mf") }} />
               :
               <Link className='link' to="/user_material">
-                <Room icons={<Lock style={{ fontSize: "17px", color: "white" }} />} number={"Materials"} onClick={(e) => { console.log("mf") }} />
+                <Room icons={<Widgets style={{ fontSize: "17px", color: "white" }} />} number={"Materials"} onClick={(e) => { console.log("mf") }} />
               </Link>
             }
 
@@ -68,10 +68,10 @@ export default function ProfileSideNav({ page }) {
             {page == "product" ?
 
 
-              <Room icons={<Lock style={{ fontSize: "17px", color: "white" }} />} number={"Products"} onClick={(e) => { console.log("mf") }} />
+              <Room icons={<Widgets style={{ fontSize: "17px", color: "white" }} />} number={"Products"} onClick={(e) => { console.log("mf") }} />
               :
               <Link className='link' to="/profile_products">
-                <Room icons={<Lock style={{ fontSize: "17px", color: "white" }} />} number={"Products"} onClick={(e) => { console.log("mf") }} />
+                <Room icons={<Widgets style={{ fontSize: "17px", color: "white" }} />} number={"Products"} onClick={(e) => { console.log("mf") }} />
               </Link>
             }
           </div>

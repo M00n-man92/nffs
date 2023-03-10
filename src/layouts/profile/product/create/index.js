@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 /// scss class
-import "../../../../styles/profile/product/createproduct.scss"
+import "../../../../styles/profile/product/create/createproduct.scss"
 /// material ui
-import { Close } from '@mui/icons-material'
+import { Close, FormatQuote, Info, Inventory, PriceChange } from '@mui/icons-material'
 import { CircularProgress, TextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { AccountCircle, Lock, Google } from '@mui/icons-material';
@@ -106,16 +106,12 @@ export default function CreateProduct({ setOpenModal, openModal, setChangeRegist
 
   }
 
-  // function that takes an argument and delete image from the filNmae array
+  // chnages eerytime an image is removed from an array which sets the page to relaoad
   const [deleted, setDeleted] = useState(true)
-  const handleRemoveImage = (index) => {
-
-  }
 
   // useEffect to reload when a pic is deleted
   useEffect(() => {
-    console.log("reloaded")
-  }, [fileName, handleRemoveImage, deleted])
+  }, [fileName, deleted])
 
   // function to upload images
   const handleClick = async (e) => {
@@ -184,7 +180,7 @@ export default function CreateProduct({ setOpenModal, openModal, setChangeRegist
         left: "50%",
         top: "50%",
         height: "90%",
-        width: "80.4%",
+        width: "60.4%",
         transform: "translate(-50%, -50%)",
         outline: "none",
         opacity: "1",
@@ -254,38 +250,69 @@ export default function CreateProduct({ setOpenModal, openModal, setChangeRegist
       </div>
       <div className='createproductmiddle'>
         <TextField
+        size="small"
           className="createproducttextfield"
-          label="Username or Email"
+          label="Title"
           variant='outlined'
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <AccountCircle />
+                <FormatQuote />
               </InputAdornment>
             ),
           }}
           onChange={(e) => { setEmail(e.target.value); setUserName(e.target.value) }}
         />
         <TextField
-          className="createproductfield"
-          label="Password"
-          type="password"
+        size="small"
+          className="createproducttextfield"
+          label="Stock"
           variant='outlined'
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <Lock />
+                <Inventory />
               </InputAdornment>
             ),
           }}
-          helperText={password && password.length < 8 && "makesure is greater than 8 letters"}
-          error={password && password.length < 8}
+          onChange={(e) => { setEmail(e.target.value); setUserName(e.target.value) }}
+        />
+        <TextField
+        size="small"
+          className="createproducttextfield"
+          label="Discription"
+          variant='outlined'
+          multiline
+          rows={4}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Info />
+              </InputAdornment>
+            ),
+          }}
+          onChange={(e) => { setEmail(e.target.value); setUserName(e.target.value) }}
+        />
+
+        <TextField
+                size="small"
+
+          className="createproducttextfield"
+          label="Price"
+          type="number"
+          variant='outlined'
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <PriceChange />
+              </InputAdornment>
+            ),
+          }}
+          
+          error={!password}
           onChange={(e) => { setPassWord(e.target.value) }}
         />
-        <div className="createproductrememberme">
-          <FormControlLabel control={<Checkbox />} label="Remember Me" />
-          <a href="https://realestate.niddf.com/" >Lost your password?</a>
-        </div>
+        
       </div>
       <div className='createproductlast'>
         <button
@@ -293,7 +320,7 @@ export default function CreateProduct({ setOpenModal, openModal, setChangeRegist
           onClick={(e) => handleCreateProduct()}
           disabled={isFetching}
         >
-          {isFetching ? <CircularProgress style={{ color: "white", width: "20px", height: "20px" }} /> : <>Login</>}
+          {isFetching ? <CircularProgress style={{ color: "white", width: "20px", height: "20px" }} /> : <>Create</>}
 
         </button>
         {/* <div className="logingoogle">

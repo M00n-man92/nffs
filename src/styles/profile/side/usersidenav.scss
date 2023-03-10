@@ -2,8 +2,8 @@
   position: sticky;
     top: 0;
   // margin-top: 10%;
-  width: 20%;
-  background-color: #004274;
+  width: 18%;
+  background-color: #002B4B;
 height: 100vh;
   .usersidenavcontainer {
     position: sticky;
@@ -17,9 +17,15 @@ height: 100vh;
     align-items: flex-start;
     justify-content: center;
     .usersidenavtitle {
+      display: flex;
+      justify-content: flex-start;
+      // background-color: red;
       margin-bottom: 10%;
+      width: 100%;
+
     }
     .usersidenavlist {
+      // background-color: red;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -43,7 +49,7 @@ height: 100vh;
         }
         span {
           font-family: "Bellota-Bold";
-          font-size: 18px;
+          font-size: 16px;
           margin-left: 15%;
           color: #839eb2;
         }

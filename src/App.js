@@ -38,7 +38,7 @@ function App() {
 
     <div className="App" onClick={(e) => { isItOpen && sideSetOpen(false) }} >
       {/* <Intro /> */}
-      {navNeeded && display()}
+      {!navNeeded && display()}
 
       <Sidebar open={isItOpen} />
       <Routes>
@@ -56,8 +56,11 @@ function App() {
         <Route path="/manufacturer/:nameorid" element={<ManufacturerPage />} />
         <Route path="/cart" element={<Cart />} />
         {currentUser && <>
-          <Route path="/profile" element={<UserProfile />} />
-          <Route path="/profile_products" element={<UserProduct />} />
+        
+          <Route path="/profile" element={<UserProfile />}  />
+          <Route path="/profile_products" element={<UserProduct />}
+          
+          />
         </>
         }
 

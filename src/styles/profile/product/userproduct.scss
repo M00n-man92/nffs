@@ -1,21 +1,23 @@
 .userproduct {
   display: flex;
-  height: 100%;
+  // height: 100%;
+
   width: 100%;
   .userproductmargin {
     width: 80%;
-    height: 100%;
+    height: inherit;
+
     .userproductcontainer {
       width: 100%;
       display: flex;
       flex-direction: column;
-      
-      // background-color: red;
+      height: 100%;
+      // overflow: scroll;
       .userproductheader {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 5%;
+        margin-bottom: 3%;
         margin-top: 5%;
         margin-left: 5%;
         margin-right: 5%;
@@ -24,7 +26,8 @@
           font-family: "Bellota-Bold";
         }
         .userproductcreatebutton {
-          background-color: #77c720;
+          background-color: #00aeff;
+          //
           color: white;
           height: 40px;
           width: 100px;
@@ -34,14 +37,39 @@
         }
       }
 
+      .userproductsearch {
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 3%;
+        // width: 100%;
+        justify-content: space-between;
+        // background-color: red;
+        .userproductsearchicon {
+          width: 40%;
+          display: flex;
+          align-items: center;
+        }
+        .userproductsortpage{
+
+          width: 40%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+      }
       .userproductgridd {
         // margin-top: 5%;
-      margin-left: 5%;
-      margin-right: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
         // width: 100%;
         // background-color: red;
         // margin-right: 5%;
         height: 100vh;
+        // background-color: red;
+overflow-x: hidden;
+overflow: hidden;
         .cellimage {
           display: flex;
           justify-content: center;
@@ -58,7 +86,7 @@
           display: flex;
           align-items: center;
           button {
-            background-color: #00aeff;
+            background-color: #77c720;
             color: white;
             border: none;
             border-radius: 3px;

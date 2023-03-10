@@ -4,8 +4,15 @@ import "../../../styles/profile/product/userproduct.scss"
 // mui 
 import Modal from '@mui/material/Modal';
 import { DataGrid } from '@mui/x-data-grid';
+
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputAdornment from '@mui/material/InputAdornment';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 // import { DataGrid } from '@mui/x-data-grid';
-import { DeleteOutline } from '@mui/icons-material';
+import { DeleteOutline, Search } from '@mui/icons-material';
 //
 import { Link } from 'react-router-dom'
 //
@@ -16,6 +23,8 @@ import ProfileSideNav from '../sidenav';
 import CreateProduct from './create';
 export default function ProfileProduct() {
 
+  // state to fetch the sort
+  const [sort, setSort] = useState("");
   // state to open create modal when create new products is opened
   const [openModal, setOpenModal] = useState(false)
   const renderModal = () => {
@@ -28,8 +37,8 @@ export default function ProfileProduct() {
           overflow: "auto",
           outline: "none",
         }}
-        open={!openModal}
-        onClose={(e) => { setOpenModal(!openModal)}}
+        open={openModal}
+        onClose={(e) => { setOpenModal(!openModal) }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -107,7 +116,47 @@ export default function ProfileProduct() {
               onClick={(e) => { setOpenModal(!openModal) }}
             >Create Product</button>
           </div>
+          <div className='userproductsearch'>
+            <div className='userproductsearchicon'>
 
+              <OutlinedInput
+                size='small'
+                id="outlined-adornment-weight"
+                startAdornment={<InputAdornment position="start"><Search /></InputAdornment>}
+                aria-describedby="outlined-weight-helper-text"
+                inputProps={{
+                  'aria-label': 'weight',
+                }}
+                style={{borderRadius:"none"}}
+                onChange={(e) => { console.log(e.target.value) }}
+              />
+
+              <button style={{ width: "30%", height: "40px", backgroundColor: "#00aeff", color: "white", border: "none" }}> Search</button>
+            </div>
+            <div className='userproductsortpage'>
+              <span>Sort By:</span>
+              <FormControl sx={{ m: 1, minWidth: "60%" }}>
+                <Select
+                  labelId="demo-simple-select-autowidth-label"
+                  id="demo-simple-select-autowidth"
+                  autoWidth
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                  size="small"
+                >
+                  <MenuItem value="">
+                    {sort ? <em>{sort}</em> : <em>Newest to Oldest</em>}
+
+                  </MenuItem>
+                  <MenuItem value="Newest to Oldest" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Newest to Oldest</span></MenuItem>
+                  <MenuItem value="Oldest to Newest" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Oldest to Newest</span></MenuItem>
+                  <MenuItem value="Price. High to Low" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Price. High to Low</span></MenuItem>
+                  <MenuItem value="Price. Low to High" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Price. Low to High</span></MenuItem>
+
+                </Select>
+              </FormControl>
+            </div>
+          </div>
           <div className="userproductgridd">
 
             <DataGrid
@@ -117,7 +166,7 @@ export default function ProfileProduct() {
               pageSize={5}
               rowsPerPageOptions={[5]}
 
-              checkboxSelection
+              // checkboxSelection
               disableSelectionOnClick
             />
           </div>

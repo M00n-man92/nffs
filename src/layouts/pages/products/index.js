@@ -48,17 +48,17 @@ export default function Products() {
                   id="demo-simple-select-autowidth"
                   autoWidth
                   value={sort}
-                  onChange={(e)=>setSort(e.target.value)}
+                  onChange={(e) => setSort(e.target.value)}
                   size="small"
                 >
                   <MenuItem value="">
-                    {sort?<em>{sort}</em>:<em>Newest to Oldest</em>}
-                    
+                    {sort ? <em>{sort}</em> : <em>Newest to Oldest</em>}
+
                   </MenuItem>
-                  <MenuItem value="Newest to Oldest" onClick={(e)=>setSort(e.target.value)}><span style={{fontSize:"14px", fontFamily:"Bellota-Light"}}>Newest to Oldest</span></MenuItem>
-                  <MenuItem value="Oldest to Newest" onClick={(e)=>setSort(e.target.value)}><span style={{fontSize:"14px", fontFamily:"Bellota-Light"}}>Oldest to Newest</span></MenuItem>
-                  <MenuItem value="Price. High to Low" onClick={(e)=>setSort(e.target.value)}><span style={{fontSize:"14px", fontFamily:"Bellota-Light"}}>Price. High to Low</span></MenuItem>
-                  <MenuItem value="Price. Low to High" onClick={(e)=>setSort(e.target.value)}><span style={{fontSize:"14px", fontFamily:"Bellota-Light"}}>Price. Low to High</span></MenuItem>
+                  <MenuItem value="Newest to Oldest" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Newest to Oldest</span></MenuItem>
+                  <MenuItem value="Oldest to Newest" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Oldest to Newest</span></MenuItem>
+                  <MenuItem value="Price. High to Low" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Price. High to Low</span></MenuItem>
+                  <MenuItem value="Price. Low to High" onClick={(e) => setSort(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Price. Low to High</span></MenuItem>
 
                 </Select>
               </FormControl>
@@ -379,6 +379,7 @@ export default function Products() {
                     : <MinimizeOutlined style={{ cursor: "pointer", }} onClick={(e) => setSearchPressed(!searchPressed)} />} />
               {searchPressed && <FormControl sx={{ m: 1, width: '90%' }} variant="outlined">
                 <OutlinedInput
+                size='small'
                   id="outlined-adornment-weight"
                   endAdornment={<InputAdornment position="end"><Search /></InputAdornment>}
                   aria-describedby="outlined-weight-helper-text"
@@ -391,7 +392,7 @@ export default function Products() {
               }
             </div>
             <div className='catasidenav'>
-              <button style={{ width: "90%", height: "40px", marginBottom:"5%",backgroundColor: "#00aeff", color: "white", border: "none" }}> Search</button>
+              <button style={{ width: "90%", height: "40px", marginBottom: "5%", backgroundColor: "#00aeff", color: "white", border: "none" }}> Search</button>
 
             </div>
           </div>
