@@ -1,5 +1,138 @@
-.userprofile{
-  height: 400vh;
+.userprofile {
+  // height: 400vh;
   width: 100%;
   display: flex;
+  height: 100%;
+
+  background-color: #f7f8f9;
+  .userprofileinfo {
+    width: 80%;
+    height: inherit;
+    .userprofileheader {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      background-color: white;
+      span {
+        margin-top: 2%;
+        margin-left: 3%;
+        font-size: 28px;
+        font-family: "Bellota-Bold";
+      }
+    }
+
+    .userprofileinfoname {
+      margin-top: 2%;
+      margin-left: 3%;
+      margin-bottom: 2%;
+      .userprofileinfospan {
+        font-size: 18px;
+        font-family: "Bellota-Bold";
+        background-color: #f7f8f9;
+      }
+    }
+    .userprofileinformation {
+      width: 95%;
+      // height: 100vh;
+      background-color: white;
+      margin-left: 5%;
+      margin-bottom: 5%;
+      .userprofilecontainer {
+        
+        // margin-top: 3%;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-bottom: 5%;
+        height: 100%;
+        display: flex;
+        .userprofileinfoimage {
+          margin-top: 3%;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          // justify-content: center;
+          // background-color: blue;
+          img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 3%;
+          }
+          button {
+            height: 40px;
+            width: 90%;
+            border: none;
+            background-color: #33beff;
+            color: white;
+            margin-bottom: 3%;
+          }
+          span {
+            font-size: 12px;
+            font-family: "Bellota-Light";
+          }
+          .socialmedia{
+            font-size: 18px;
+            font-family: "Bellota-Bold";
+          }
+        }
+        .userprofileinfoupdates {
+          flex: 3;
+          margin-top: 3%;
+          display: flex;
+          flex-direction: column;
+
+          // background-color: red;
+          .userprofiletextarea {
+            margin-left: 3%;
+            margin-right: 3%;
+            // background-color: blue;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            .userprofiletextcontainer {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 3%;
+              .label {
+                font-size: 18px;
+                font-family: "Bellota-Bold";
+                margin-bottom: 5%;
+              }
+              .userprofiletextfield {
+              }
+            }
+            
+           
+          }
+          .userprofiletextcontainerfilled {
+            margin-left: 6%;
+            margin-right: 3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            // background-color: red;
+            margin-bottom: 3%;
+            .label {
+              font-size: 18px;
+              font-family: "Bellota-Bold";
+              margin-bottom: 5%;
+            }
+            .userprofiletextfield {
+              width: 95%;
+            }
+            button {
+              background-color: #77c720;
+              border: none;
+              width: 30%;
+              height: 40px;
+              border-radius: 4px;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
 }
