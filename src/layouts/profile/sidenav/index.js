@@ -28,7 +28,7 @@ export default function ProfileSideNav({ page }) {
           <div className={page == "favorite" ? "usersidenavindividuallist bold" : 'usersidenavindividuallist'}>
             {page == "favorite" ?
               <Room icons={<FavoriteBorderOutlined style={{ fontSize: "17px", color: "white" }} />} number={"Favorite"} />
-              : <Link className='link' to="/profile/favorite">
+              : <Link className='link' to="/profile_favorite">
                 <Room icons={<FavoriteBorderOutlined style={{ fontSize: "17px", color: "white" }} />} number={"Favorite"} />
               </Link>
             }

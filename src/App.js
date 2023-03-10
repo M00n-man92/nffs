@@ -24,6 +24,7 @@ import UserProfile from "./layouts/profile";
 import UserProduct from "./layouts/profile/product"
 //
 import { useSelector } from "react-redux";
+import UserFavorite from "./layouts/profile/favorite";
 function App() {
   const iColumns = ["hme", "apartmet", "pepoke", "heartbreak", "my bad", "the past is the paset", "if i die today"]
   const iRows = ["uncle iroh", "prince zuko", "start lord", "drax", "groot"]
@@ -38,7 +39,7 @@ function App() {
 
     <div className="App" onClick={(e) => { isItOpen && sideSetOpen(false) }} >
       {/* <Intro /> */}
-      {!navNeeded && display()}
+      {navNeeded && display()}
 
       <Sidebar open={isItOpen} />
       <Routes>
@@ -58,9 +59,8 @@ function App() {
         {currentUser && <>
         
           <Route path="/profile" element={<UserProfile />}  />
-          <Route path="/profile_products" element={<UserProduct />}
-          
-          />
+          <Route path="/profile_products" element={<UserProduct />}/>
+          <Route path="/profile_favorite" element={<UserFavorite />} />
         </>
         }
 

@@ -14,7 +14,7 @@ export default function Sidebar({ open }) {
       <div className='catagory'>
 
         <div className='lists'>
-          <Link className='link' to="/profile/favorite">
+          <Link className='link' to="/profile_favorite">
             <Rooms icons={<FavoriteBorderOutlined color='#004274' fontSize='15px' style={{marginRight:"10px"}}/>} number={"Favorites"} />
           </Link>
         </div>

@@ -1,0 +1,63 @@
+.userlikeditems{
+  display: flex;
+  height: 100%;
+
+  width: 100%;
+  background-color: #F7F8F9;
+  .userfavorites{
+    width: 80%;
+    height: inherit;
+    .userfavoritesheader{
+      width: 100%;
+      height: 70px;
+      display: flex;
+      background-color: white;
+      .userfavoritedivider{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       
+        // margin-top: 5%;
+        margin-left: 5%;
+        // margin-right: 5%;
+        // background-color: red;
+        .userfavoritetitle{
+          font-size: 28px;
+          font-family: "Bellota-Bold";
+        }
+      }
+      margin-bottom: 3%;
+    }
+    .userfavoritemiddle{
+      width: 95%;
+      // // margin-bottom: 3%;
+      //   margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
+        .userhasnofavorites{
+          margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 2%;
+        display: flex;
+        // align-items: flex-end; 
+          // background-color: red;
+          // justify-content: center;
+          height: inherit;
+          height: 40px;
+          // justify-content: center;
+
+          // margin-bottom: 5%;
+        }
+        .favpinterestlayout{
+          // height: 90%;
+          // margin-bottom: 15%;
+          // background-color: red;
+        }
+    }
+  }
+}
