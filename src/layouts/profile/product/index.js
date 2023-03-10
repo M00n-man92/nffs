@@ -16,17 +16,27 @@ import { DeleteOutline, Search } from '@mui/icons-material';
 //
 import { Link } from 'react-router-dom'
 //
-import { data } from "../../pages/products/data"
+import { data } from "./data"
 
 //
 import ProfileSideNav from '../sidenav';
 import CreateProduct from './create';
+import UpdateProduct from './update';
 export default function ProfileProduct() {
+
+  // state to change the modal from cupdate to create
+  const [changeModal, setChangeModal] = useState();
 
   // state to fetch the sort
   const [sort, setSort] = useState("");
+
   // state to open create modal when create new products is opened
   const [openModal, setOpenModal] = useState(false)
+
+  // state to hold the item for updating the values
+  const [item, setItem] = useState({});
+
+  // modal to appear when edit or create buttons are pressed
   const renderModal = () => {
     return (<>
       <Modal
@@ -42,10 +52,10 @@ export default function ProfileProduct() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
+        {changeModal === "update" ? <UpdateProduct setOpenModal={setOpenModal} openModal={openModal} product={item}/> :
 
-
-        <CreateProduct setOpenModal={setOpenModal} openModal={openModal} />
-
+          <CreateProduct setOpenModal={setOpenModal} openModal={openModal} />
+        }
       </Modal>
     </>
     )
@@ -59,7 +69,7 @@ export default function ProfileProduct() {
       renderCell: (params) => {
         return (
           <div className="cellimage">
-            <img src={params.row.img} />
+            <img src={params.row.img[0]?params.row.img[0]:params.row.img} />
             <span>{params.row.name.length > 10 ? params.row.name.split("", 10) : params.row.name}{params.row.name.length > 10 ? "..." : ""}</span>
 
           </div>
@@ -93,9 +103,14 @@ export default function ProfileProduct() {
         return (
 
           <div className="holeup" id={params.row._id}>
-            <Link to={"/product_update/" + params.row._id}>
-              <button> Edit</button>
-            </Link>
+            <button 
+              onClick={(e) => {
+                setChangeModal("update");
+                setItem(params.row);
+                setOpenModal(!openModal);
+                console.log(item)
+              }}
+            > Edit</button>
             <DeleteOutline className="userproductddeletebutton" style={{ color: "red" }} onClick={() => { console.log("i wonder") }} />
           </div>
         )
@@ -113,8 +128,12 @@ export default function ProfileProduct() {
             <span className='userproducttitle'>Products</span>
             <button
               className='userproductcreatebutton'
-              onClick={(e) => { setOpenModal(!openModal) }}
-            >Create Product</button>
+              onClick={(e) => { 
+                setChangeModal("create");
+                setOpenModal(!openModal)
+              }}
+            >
+              Create Product</button>
           </div>
           <div className='userproductsearch'>
             <div className='userproductsearchicon'>
@@ -127,7 +146,7 @@ export default function ProfileProduct() {
                 inputProps={{
                   'aria-label': 'weight',
                 }}
-                style={{borderRadius:"none"}}
+                style={{ borderRadius: "none" }}
                 onChange={(e) => { console.log(e.target.value) }}
               />
 
