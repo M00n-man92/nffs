@@ -13,5 +13,5 @@ if (saved) {
 		if(currentUser) token = currentUser.data.token
 	}
 }
-export const publicRequest = axios.create({ baseURL: otherUrl })
+export const publicRequest = axios.create({ baseURL: baseUrl })
 export const userRequest=axios.create({baseURL:baseUrl,headers:{token:`Bearer ${token}` }})
