@@ -47,7 +47,7 @@ export default function ProfileSideNav({ page }) {
 
               <Room icons={<LocationCityOutlined style={{ fontSize: "17px", color: "white" }} />} number={"Projects"} onClick={(e) => { console.log("mf") }} />
               :
-              <Link className='link' to="/user_project">
+              <Link className='link' to="/profile_Projects">
                 <Room icons={<LocationCityOutlined style={{ fontSize: "17px", color: "white" }} />} number={"Projects"} onClick={(e) => { console.log("mf") }} />
               </Link>
             }
@@ -58,7 +58,7 @@ export default function ProfileSideNav({ page }) {
 
               <Room icons={<Widgets style={{ fontSize: "17px", color: "white" }} />} number={"Materials"} onClick={(e) => { console.log("mf") }} />
               :
-              <Link className='link' to="/user_material">
+              <Link className='link' to="/profile_materials">
                 <Room icons={<Widgets style={{ fontSize: "17px", color: "white" }} />} number={"Materials"} onClick={(e) => { console.log("mf") }} />
               </Link>
             }

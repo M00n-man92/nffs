@@ -4,7 +4,11 @@ import "../../styles/profile/userprofile.scss"
 
 // mui 
 import { CircularProgress, TextField } from '@mui/material';
-
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputAdornment from '@mui/material/InputAdornment';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import ProfileSideNav from './sidenav'
 
 export default function UserProfile() {
@@ -41,6 +45,12 @@ export default function UserProfile() {
   const [pinterest, setPinterest] = useState("");
   const [youTube, setYouTube] = useState("");
 
+  //   account form
+  const [account, setAccount] = useState("")
+
+  //  password
+  const [confirm, setConfirm] = useState("")
+  const [newPassword, setNewPassword] = useState("")
 
 
   const [file, setFile] = useState()
@@ -196,6 +206,7 @@ export default function UserProfile() {
                 Social Media
               </span>
             </div>
+
             <div className="userprofileinfoupdates">
               <div className='userprofiletextarea'>
                 <div className='userprofiletextcontainer'>
@@ -297,8 +308,119 @@ export default function UserProfile() {
               </div>
             </div>
           </div>
+
+        </div>
+        <div className='userprofileinformation'>
+          <div className='userprofilecontainer'>
+            <div className='userprofileinfoimage'>
+              <span className="socialmedia">
+                Account Role
+              </span>
+            </div>
+            <div className="userprofileinfoupdates">
+
+              <div className='userprofiletextcontainerfilled'>
+                <FormControl sx={{ m: 1, minWidth: "60%" }}>
+                  <Select
+                    labelId="demo-simple-select-autowidth-label"
+                    id="demo-simple-select-autowidth"
+                    autoWidth
+                    value={account}
+                    onChange={(e) => setAccount(e.target.value)}
+                    size="small"
+                  >
+                    <MenuItem value="">
+                      {<em>{account}</em>}
+
+                    </MenuItem>
+                    <MenuItem value="Firm" onClick={(e) => setAccount(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Firm</span></MenuItem>
+                    <MenuItem value="Manufacturer" onClick={(e) => setAccount(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Manufacturer</span></MenuItem>
+                    <MenuItem value="Producer" onClick={(e) => setAccount(e.target.value)}><span style={{ fontSize: "14px", fontFamily: "Bellota-Light" }}>Producer</span></MenuItem>
+
+
+                  </Select>
+                </FormControl>
+                <div className='userprofiletextcontainerfilled'>
+                  <button>Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div className='userprofileinformation'>
+          <div className='userprofilecontainer'>
+            <div className='userprofileinfoimage'>
+              <span className="socialmedia">
+                Password
+              </span>
+            </div>
+            <div className='userprofileinfoupdates'>
+              <div className='userprofiletextarea'>
+                <div className='userprofiletextcontainer'>
+                  <span className='label'> New Password</span>
+                  <TextField
+                    size="small"
+                    className="userprofiletextfield"
+                    // label="Title"
+                    variant='outlined'
+                    placeholder="Enter the Facebook URL"
+
+                    onChange={(e) => { setNewPassword(e.target.value); setUserName(e.target.value) }}
+                  />
+                </div>
+                <div className='userprofiletextcontainer'>
+                  <span className='label'> Confirm Password</span>
+                  <TextField
+                    size="small"
+                    className="userprofiletextfield"
+                    // label="Title"
+                    variant='outlined'
+                    placeholder="Enter the Twitter URL"
+                    onChange={(e) => { setConfirm(e.target.value); setUserName(e.target.value) }}
+                  />
+                </div>
+              </div>
+              <div className='userprofiletextcontainerfilled'>
+
+                <div className='userprofiletextcontainerfilled'>
+                  <button>Update</button>
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+        </div>
+        <div className='userprofileinformation'>
+          <div className='userprofilecontainer'>
+            <div className='userprofileinfoimage'>
+              <span className="socialmedia">
+                Delete User
+              </span>
+            </div>
+            <div className='userprofileinfoupdates'>
+
+              <div className='userprofiletextcontainerfilled'>
+
+                <div className='userprofiletextcontainerfilled'>
+                  <button className="deleteuserprofile">Delete</button>
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
         </div>
       </div>
-    </div>
+    </div >
   )
 }

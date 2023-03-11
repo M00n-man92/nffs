@@ -16,13 +16,13 @@ export default function UserFavorite() {
           </div>
         </div>
         <div className="userfavoritemiddle">
-          {/* <div className="userhasnofavorites">
+          <div className="userhasnofavorites">
             <span style={{ height: "100%" }}>You don't have any favorite products yet!</span>
 
-          </div> */}
-           <div className="favpinterestlayout">
-            <PinterstLayout cards={blogs} linker="blog" blog={true} project={false} />
           </div>
+           {/* <div className="favpinterestlayout">
+            <PinterstLayout cards={blogs} linker="blog" blog={true} project={false} />
+          </div> */}
  
 
         </div>

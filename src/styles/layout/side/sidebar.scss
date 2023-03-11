@@ -6,7 +6,7 @@
   height: 20%;
   // background-color: red;
   transition: all 1s ease;
-align-items: center;
+  align-items: center;
 
   .catagory {
     width: 100%;
@@ -15,6 +15,7 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
     .lists {
       height: 80%;
       margin-bottom: 1%;
@@ -23,8 +24,8 @@ align-items: center;
       justify-content: flex-start;
       width: 100%;
       cursor: pointer;
-      border-bottom: 1px solid rgba(0,0,0,.15);
-      span{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      span {
         color: #004274;
       }
       &:hover {
